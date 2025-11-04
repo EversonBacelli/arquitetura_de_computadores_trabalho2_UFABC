@@ -1,0 +1,120 @@
+
+{
+  "instrucoes": [
+    {
+      "nome": "Soma",
+      "explicacao": "Realiza a operação de adição entre dois números de dois valores e guarda em uma posição de memória",
+      "comando": "add",
+      "exemplo": " $s1, $s2, $s3 - soma os valores de $s2 e $s3 e guarda em $s1 ",
+      "campos_que_exige": [
+        "destino",
+        "operando 1",
+        "operando 2"
+      ]
+    },
+    {
+      "nome": "Subtração",
+      "explicacao": "Realiza a operação de subtração entre dois números e guarda o resultado em uma posição de memória",
+      "comando": "sub",
+      "exemplo": " $s1, $s2, $s3 - subtrai os valores de $s2 e $s3 e guarda em $s1 ",
+      "campos_que_exige": [
+        "destino",
+        "operando 1",
+        "operando 2"
+      ]
+    },
+    {
+      "nome": "Divisão",
+      "comando": "div",
+      "explicacao": "Realiza a operação de divisão entre dois números, guarda o quociente.",
+      "exemplo": " $s1, $s2, $s3 - divide $s3 por $s2 e guarda o resultado em $s1 ",
+      "campos_que_exige": [
+        "destino",
+        "operando 1",
+        "operando 2"
+      ]
+    },
+    {
+      "nome": "Multiplicação",
+      "explicacao": "Realiza a operação de multiplicação entre dois números.",
+      "exemplo": " $s1, $s2, $s3 - multiplicação $s3 por $s2 e guarda o resultado em $s1 ",
+      "comando": "mul",
+      "campos_que_exige": [
+        "destino",
+        "operando 1",
+        "operando 2"
+      ]
+    },
+    {
+      "nome": "Maior Que",
+      "explicacao": "Compara dois números e retorna verdadeiro se o primeiro for maior que o segundo.",
+      "exemplo": " $s1, $s2, $s3 -  compara se $s2 é maior que $s3, o resultado guarda em $s1 ",
+      "comando": "mq",
+      "campos_que_exige": [
+        "destino",
+        "Número 1",
+        "Número 2"
+      ]
+    },
+    {
+      "nome": "Menor Que",
+      "explicacao": "Compara dois números e retorna verdadeiro se o primeiro for menor que o segundo.",
+      "comando": "meq",
+      "exemplo": " $s1, $s2, $s3 -  compara se $s2 é menor que $s3, o resultado guarda em $s1 ",
+      "campos_que_exige": [
+        "destino",
+        "Número 1",
+        "Número 2"
+      ]
+    },
+    {
+      "nome": "eq",
+      "explicacao": "Compara dois números e retorna verdadeiro se o primeiro for igual ao segundo.",
+      "comando": "eq",
+      "exemplo": " $s1, $s2, $s3 -  compara se $s2 é igual a $s3, o resultado guarda em $s1 ",
+      "campos_que_exige": [
+        "destino",
+        "Número 1",
+        "Número 2"
+      ]
+    },
+    {
+      "nome": "Repetição",
+      "explicacao": "Executa um bloco de código repetidamente enquanto uma condição for verdadeira.",
+      "comando": "rp",
+      "exemplo": " [ ... ] repete um conjunto de instruções",
+      "campos_que_exige": [
+        "Condição",
+        "Bloco de código"
+      ]
+    },
+    {
+      "nome": "Bloquear",
+      "explicacao": "Impede a execução de um processo ou ação.",
+      "comando": "blq",
+      "campos_que_exige": [
+        "Processo/Ação"
+      ]
+    },
+    {
+      "nome": "Leitura",
+      "explicacao": "Lê um valor de entrada e o armazena em uma variável de destino.",
+      "comando": "le",
+      "exemplo": " $s1, $s2 - carrega o conteúdo de $s2 em $s1 ",
+      "campos_que_exige": [
+        "origem",
+        "destino"
+      ]
+    },
+    {
+      "nome": "Escrita",
+      "explicacao": "Guarda o conteúdo em um espaço de memória",
+      "comando": "es",
+      "exemplo": " $s1, $s2 - salva o conteúdo de $s1 em $s2 ",
+      "campos_que_exige": [
+        "origem",
+        "destino"
+      ]
+    }
+  ]
+}

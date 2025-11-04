@@ -1,0 +1,107 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "buscarInstrucoes",
+        "importPath": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
+        "description": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
+        "isExtraImport": true,
+        "detail": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
+        "documentation": {}
+    },
+    {
+        "label": "carregarMemoriaPrincipal",
+        "importPath": "projeto2_meu_pc.memoriaPrincipal.mp",
+        "description": "projeto2_meu_pc.memoriaPrincipal.mp",
+        "isExtraImport": true,
+        "detail": "projeto2_meu_pc.memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "carregarRegistradores",
+        "importPath": "projeto2_meu_pc.registradores.rg",
+        "description": "projeto2_meu_pc.registradores.rg",
+        "isExtraImport": true,
+        "detail": "projeto2_meu_pc.registradores.rg",
+        "documentation": {}
+    },
+    {
+        "label": "buscarInstrucoes",
+        "kind": 2,
+        "importPath": "instrucoes.carregarInstrucoes",
+        "description": "instrucoes.carregarInstrucoes",
+        "peekOfCode": "def buscarInstrucoes():\n    caminho_relativo = \"projeto2_meu_pc/instrucoes/instrucoes.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n            conteudo = json.load(arquivo)  # Corrigido: passar objeto de arquivo\n            return conteudo\n    else:\n        print(\"\\nArquivo não encontrado nesse caminho.\")",
+        "detail": "instrucoes.carregarInstrucoes",
+        "documentation": {}
+    },
+    {
+        "label": "carregarMemoriaPrincipal",
+        "kind": 2,
+        "importPath": "memoriaPrincipal.mp",
+        "description": "memoriaPrincipal.mp",
+        "peekOfCode": "def carregarMemoriaPrincipal():\n    mp = np.zeros((8, 8), dtype=int)\n    return mp",
+        "detail": "memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "carregarRegistradores",
+        "kind": 2,
+        "importPath": "registradores.rg",
+        "description": "registradores.rg",
+        "peekOfCode": "def carregarRegistradores():\n    registradores = np.zeros((8), dtype=int)\n    return registradores",
+        "detail": "registradores.rg",
+        "documentation": {}
+    },
+    {
+        "label": "colecao",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "colecao = buscarInstrucoes()\nprint(colecao)\n# for instr in colecao['instrucoes']:\n#     print(instr)\nmp = carregarMemoriaPrincipal()\nregistradores = carregarRegistradores()\nprint(\"Memória Principal: \")\nprint(mp)\nprint(\"Registradores \",registradores)",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "mp",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "mp = carregarMemoriaPrincipal()\nregistradores = carregarRegistradores()\nprint(\"Memória Principal: \")\nprint(mp)\nprint(\"Registradores \",registradores)",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "registradores",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "registradores = carregarRegistradores()\nprint(\"Memória Principal: \")\nprint(mp)\nprint(\"Registradores \",registradores)",
+        "detail": "index",
+        "documentation": {}
+    }
+]
