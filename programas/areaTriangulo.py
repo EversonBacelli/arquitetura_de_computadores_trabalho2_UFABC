@@ -1,0 +1,3 @@
+
+# def calcAreaTriangulo(base, altura):
+    

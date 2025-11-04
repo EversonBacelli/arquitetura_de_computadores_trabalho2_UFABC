@@ -27,6 +27,14 @@
         "documentation": {}
     },
     {
+        "label": "PC",
+        "importPath": "projeto2_meu_pc.meuPC",
+        "description": "projeto2_meu_pc.meuPC",
+        "isExtraImport": true,
+        "detail": "projeto2_meu_pc.meuPC",
+        "documentation": {}
+    },
+    {
         "label": "buscarInstrucoes",
         "importPath": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
         "description": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
@@ -78,30 +86,21 @@
         "documentation": {}
     },
     {
-        "label": "colecao",
+        "label": "pc",
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "colecao = buscarInstrucoes()\nprint(colecao)\n# for instr in colecao['instrucoes']:\n#     print(instr)\nmp = carregarMemoriaPrincipal()\nregistradores = carregarRegistradores()\nprint(\"Memória Principal: \")\nprint(mp)\nprint(\"Registradores \",registradores)",
+        "peekOfCode": "pc = PC()\nprint(pc.instrucoes)\nprint(pc.mp)\nprint(pc.registradores)",
         "detail": "index",
         "documentation": {}
     },
     {
-        "label": "mp",
-        "kind": 5,
-        "importPath": "index",
-        "description": "index",
-        "peekOfCode": "mp = carregarMemoriaPrincipal()\nregistradores = carregarRegistradores()\nprint(\"Memória Principal: \")\nprint(mp)\nprint(\"Registradores \",registradores)",
-        "detail": "index",
-        "documentation": {}
-    },
-    {
-        "label": "registradores",
-        "kind": 5,
-        "importPath": "index",
-        "description": "index",
-        "peekOfCode": "registradores = carregarRegistradores()\nprint(\"Memória Principal: \")\nprint(mp)\nprint(\"Registradores \",registradores)",
-        "detail": "index",
+        "label": "PC",
+        "kind": 6,
+        "importPath": "meuPC",
+        "description": "meuPC",
+        "peekOfCode": "class PC:\n    def __init__(self):\n        self.instrucoes = buscarInstrucoes()\n        self.mp = carregarMemoriaPrincipal()\n        self.registradores = carregarRegistradores()",
+        "detail": "meuPC",
         "documentation": {}
     }
 ]

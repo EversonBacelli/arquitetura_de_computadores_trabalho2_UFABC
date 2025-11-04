@@ -1,18 +1,13 @@
+from projeto2_meu_pc.meuPC import PC
 
-from projeto2_meu_pc.instrucoes.carregarInstrucoes import buscarInstrucoes
-from projeto2_meu_pc.memoriaPrincipal.mp import carregarMemoriaPrincipal
-from projeto2_meu_pc.registradores.rg import carregarRegistradores
+
 
 # start
-colecao = buscarInstrucoes()
+pc = PC()
 
-print(colecao)
+print(pc.instrucoes)
+print(pc.mp)
+print(pc.registradores)
 
-# for instr in colecao['instrucoes']:
-#     print(instr)
 
-mp = carregarMemoriaPrincipal()
-registradores = carregarRegistradores()
-print("Memória Principal: ")
-print(mp)
-print("Registradores ",registradores)
+
