@@ -1,6 +1,7 @@
 # IMPORTAR RECURSOS
 from arquitetura_de_computadores_trabalho2_UFABC.instrucoes.carregarInstrucoes import buscarInstrucoes
-from arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp import carregarMemoriaPrincipal
+from arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp import carregarMemoriaPrincipal, selecionarPosicaoMP
+from arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp import lerEmMP, escreverEmMP
 from arquitetura_de_computadores_trabalho2_UFABC.registradores.rg import carregarRegistradores
 from arquitetura_de_computadores_trabalho2_UFABC.programas.carregarProgramas import carregarPrograma
 from arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcAritmeticas import operacoesAritmeticas
@@ -14,10 +15,15 @@ class PC:
         
         # RECURSOS DE MEMORIA
         self.mp = carregarMemoriaPrincipal()         # memória principal
+        self.definirPosicaoMP = selecionarPosicaoMP
+        self.leitura = lerEmMP
+        self.escrita = escreverEmMP
+        
         self.registradores = carregarRegistradores() # registradores
         # SOFTWARE COMO PROGRAMA
         programa = carregarPrograma()
         PC.ALGORITMO.append(programa)
+        
         # ULA
         self.OPERACOES_ARITMETICAS = operacoesAritmeticas.calc
         self.OPERACOES_LOGICAS = operacoesLogicas.comparar
@@ -25,12 +31,6 @@ class PC:
         
     # def exec(self):
         
-    def controlarMP(self, comando):
-        return self.mp
+    # def leituraMP():
     
-    def controlarRegistradores(self, opc):
-        return self.registradores
     
-    def realizarOperacoesAritmeticas(opc):
-        if opc == 'add':    
-            print('add')
