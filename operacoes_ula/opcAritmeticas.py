@@ -2,18 +2,18 @@ from arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmetica
 
 
 class operacoesAritmeticas:
-    def calc(opc, destino, operando1, operando2):
+    def calc(opc, operando1, operando2):
         if opc == 'add':
-            resp = realizarSoma(destino, operando1, operando2)
+            resp = realizarSoma(operando1, operando2)
             return resp
         elif opc == 'sub':
-            resp = realizarSubtracao(destino, operando1, operando2)
+            resp = realizarSubtracao(operando1, operando2)
             return resp
         elif opc == 'div':
-            resp = realizarDivisao(destino, operando1, operando2)
+            resp = realizarDivisao(operando1, operando2)
             return resp
         elif opc == 'mul':
-            resp = realizarMultiplicacao(destino, operando1, operando2)
+            resp = realizarMultiplicacao(operando1, operando2)
             return resp
         else:
             return Exception

@@ -2,15 +2,15 @@ from arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica imp
 
 
 class operacoesLogicas:
-    def comparar(opc, destino, operando1, operando2):
+    def comparar(opc, operando1, operando2):
         if opc == 'mq':   # maior que
-            resp = definirSeEmaior(destino, operando1, operando2)
+            resp = definirSeEmaior(operando1, operando2)
             return resp
         elif opc == 'meq':
-            resp = definirSeEmenor(destino, operando1, operando2)
+            resp = definirSeEmenor(operando1, operando2)
             return resp
         elif opc == 'eq':
-            resp = definirSeEigual(destino, operando1, operando2)
+            resp = definirSeEigual( operando1, operando2)
             return resp
         else:
             return Exception

@@ -1,12 +1,12 @@
 TITULO  :   "areaTriangulo" 
 
 EXEC
-es | registrador1 ; input1  
-es | registrador2 ; input2
-mul | registrador2; registrador1 ; registrador2
-div | registrador2 ; registrador2 ; 2
-es  | conteudo ; registrador2
-saida | conteudo; registrador2
+es | registrador[1] ; input1  
+es | registrador[2] ; input2
+mul | registrado[2]; registrador[1] ; registrador[2]
+div | registrador[2] ; registrador[2] ; 2
+es  | mp ; registrador[2]
+saida | registrador[2]
 
 
 

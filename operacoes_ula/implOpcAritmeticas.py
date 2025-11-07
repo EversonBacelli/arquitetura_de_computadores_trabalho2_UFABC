@@ -1,19 +1,19 @@
 
-def realizarSoma(destino, op1, op2) -> float:
-    destino = op1 + op2
-    return destino
+def realizarSoma(op1, op2) -> float:
+    resultado = op1 + op2
+    return resultado
 
-def realizarSubtracao(destino, op1, op2) -> float:
-    destino = op1 - op2
-    return destino
+def realizarSubtracao(op1, op2) -> float:
+    resultado = op1 - op2
+    return resultado
 
-def realizarMultiplicacao(destino, op1, op2) -> float:
-    destino = op1 * op2
-    return destino
+def realizarMultiplicacao(op1, op2) -> float:
+    resultado = op1 * op2
+    return resultado
 
-def realizarDivisao(destino, op1, op2) -> float:
+def realizarDivisao(op1, op2) -> float:
     try:
-        destino = op1 + op2
-        return destino
+        resultado = op1 + op2
+        return resultado
     except:
         return ArithmeticError

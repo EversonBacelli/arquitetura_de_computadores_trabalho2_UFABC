@@ -1,7 +1,6 @@
 import os
 
 def carregarPrograma():
-    
     caminho_relativo = "arquitetura_de_computadores_trabalho2_UFABC/programas/areaTriangulo.txt"
     caminho_absoluto = os.path.abspath(caminho_relativo)
     

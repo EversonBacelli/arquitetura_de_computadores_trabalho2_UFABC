@@ -1,13 +1,13 @@
 
-def definirSeEmaior(destino, operando1, operando2):
-    destino = 1 if operando1 > operando2 else 0
-    return destino
+def definirSeEmaior(operando1, operando2):
+    resposta = 1 if operando1 > operando2 else 0
+    return resposta
 
-def definirSeEmenor(destino, operando1, operando2):
-    destino = 1 if operando1 < operando2 else 0
-    return destino
+def definirSeEmenor(operando1, operando2):
+    resposta = 1 if operando1 < operando2 else 0
+    return resposta
 
-def definirSeEigual(destino, operando1, operando2):
-    destino = 1 if operando1 == operando2 else 0
-    return destino
+def definirSeEigual(operando1, operando2):
+    resposta = 1 if operando1 == operando2 else 0
+    return resposta
 
