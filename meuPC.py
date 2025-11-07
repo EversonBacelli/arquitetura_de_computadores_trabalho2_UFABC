@@ -34,44 +34,52 @@ class PC:
         
     def exec(self):
         alg = preProcessamento(PC.ALGORITMO[0])
-        e = Exec('add', [2, 3])
+        e = self.Exec('add', [2, 3], self)
         e.processar()
-        e2 = Exec('mq', [5, 3])
+        e2 = self.Exec('mq', [5, 3], self)
         e2.processar()
         # print(alg)
+        print(self.mp)
+
+
+    class Exec:
+        def __init__(self, comando, operandos, pc):
+            if comando in ['add', 'sub', 'mul', 'div']:
+                opc = pc.opcAritmetica(pc)
+                self.executar = opc.processar(comando, *operandos)
+            elif comando in ['mq', 'meq', 'eq']:
+                opc = pc.opcLogica(pc)
+                self.executar = opc.processar(comando, *operandos)
+            
+        def processar(self):
+            resultado = self.executar
+            # print(resultado)
         
-
-
-class Exec:
-    def __init__(self, comando, operandos):
-        if comando in ['add', 'sub', 'mul', 'div']:
-            opc = opcAritmetica()
-            self.executar = opc.processar(comando, *operandos)
-        elif comando in ['mq', 'meq', 'eq']:
-            opc = opcLogica()
-            self.executar = opc.processar(comando, *operandos)
-           
-    def processar(self):
-        resultado = self.executar
-        print(resultado)
-    
-# IMPLEMENTAÇÃO DO PROCESSAMENTO DOS COMANDOS
-class IMPL_COMANDOS_INTERNOS(ABC):
-    @abstractmethod
-    def processar(self, comando, operando1, operando2):
-        pass
+    # IMPLEMENTAÇÃO DO PROCESSAMENTO DOS COMANDOS
+    class IMPL_COMANDOS_INTERNOS(ABC):
+        @abstractmethod
+        def processar(self, comando, operando1, operando2):
+            pass
+            
+    class opcAritmetica(IMPL_COMANDOS_INTERNOS):
+        def __init__(self, pc):
+            self.OPERACOES_ARITMETICAS = operacoesAritmeticas.calc
+            self.pc = pc
+        def processar(self, comando, operando1, operando2):
+            resp = self.OPERACOES_ARITMETICAS(comando, operando1, operando2)
+            linha, coluna = self.pc.escrever(resp)
+            return linha, coluna
         
-class opcAritmetica(IMPL_COMANDOS_INTERNOS):
-    def __init__(self):
-        self.OPERACOES_ARITMETICAS = operacoesAritmeticas.calc
-    def processar(self, comando, operando1, operando2):
-        destino = self.OPERACOES_ARITMETICAS(comando, operando1, operando2)
-        return destino
+    class opcLogica(IMPL_COMANDOS_INTERNOS):
+        def __init__(self, pc):
+            self.OPERACOES_LOGICAS = operacoesLogicas.comparar
+            self.pc = pc
+        def processar(self, comando, operando1, operando2):
+            resp = self.OPERACOES_LOGICAS(comando, operando1, operando2)
+            linha, coluna = self.pc.escrever(resp)
+            return linha, coluna
     
-class opcLogica(IMPL_COMANDOS_INTERNOS):
-    def __init__(self):
-        self.OPERACOES_LOGICAS = operacoesLogicas.comparar
-
-    def processar(self, comando, operando1, operando2):
-        destino = self.OPERACOES_LOGICAS(comando, operando1, operando2)
-        return destino
+    def escrever(self, valor):
+        linha, coluna = self.definirPosicaoMP(self.mp)
+        self.escrita(linha, coluna, self.mp, valor)
+        return linha, coluna
