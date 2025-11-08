@@ -34,12 +34,15 @@ class PC:
         
     def exec(self):
         alg = preProcessamento(PC.ALGORITMO[0])
-        e = self.Exec('add', [2, 3], self)
+        e = self.Exec('add', ["MP", 2, 3], self)
         e.processar()
-        e2 = self.Exec('mq', [5, 3], self)
+        e2 = self.Exec('mq', [2, 5, 3], self)
         e2.processar()
-        # print(alg)
+        
+    
+        print(alg)
         print(self.mp)
+        print(self.registradores)
 
 
     class Exec:
@@ -65,21 +68,27 @@ class PC:
         def __init__(self, pc):
             self.OPERACOES_ARITMETICAS = operacoesAritmeticas.calc
             self.pc = pc
-        def processar(self, comando, operando1, operando2):
+        def processar(self, comando, destino ,operando1, operando2):
             resp = self.OPERACOES_ARITMETICAS(comando, operando1, operando2)
-            linha, coluna = self.pc.escrever(resp)
-            return linha, coluna
+            retorno = self.pc.escrever(resp, destino)
+            return retorno
         
     class opcLogica(IMPL_COMANDOS_INTERNOS):
         def __init__(self, pc):
             self.OPERACOES_LOGICAS = operacoesLogicas.comparar
             self.pc = pc
-        def processar(self, comando, operando1, operando2):
+        def processar(self, comando, destino ,operando1, operando2):
+            print(comando, ' ', destino, ' ', operando1, ' ', operando2)
             resp = self.OPERACOES_LOGICAS(comando, operando1, operando2)
-            linha, coluna = self.pc.escrever(resp)
-            return linha, coluna
+            retorno = self.pc.escrever(resp, destino)
+            return retorno
     
-    def escrever(self, valor):
-        linha, coluna = self.definirPosicaoMP(self.mp)
-        self.escrita(linha, coluna, self.mp, valor)
-        return linha, coluna
+    def escrever(self, valor, destino):
+        
+        if destino == "MP":
+            linha, coluna = self.definirPosicaoMP(self.mp)
+            self.escrita(linha, coluna, self.mp, valor)
+            return (linha, coluna)
+        else:
+            self.registradores[destino] = valor
+            return destino
