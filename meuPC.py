@@ -1,4 +1,5 @@
-from abc import ABC, abstractmethod    
+import re, ast
+
 
 # IMPORTAR RECURSOS
 from arquitetura_de_computadores_trabalho2_UFABC.instrucoes.carregarInstrucoes import buscarInstrucoes
@@ -9,6 +10,7 @@ from arquitetura_de_computadores_trabalho2_UFABC.programas.carregarProgramas imp
 from arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcAritmeticas import operacoesAritmeticas
 from arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcLogicas import operacoesLogicas
 from arquitetura_de_computadores_trabalho2_UFABC.programas.preExec import preProcessamento
+from arquitetura_de_computadores_trabalho2_UFABC.execucao.exec import Exec
 
 class PC:
     ALGORITMO = []
@@ -34,61 +36,38 @@ class PC:
         
     def exec(self):
         alg = preProcessamento(PC.ALGORITMO[0])
-        e = self.Exec('add', ["MP", 2, 3], self)
-        e.processar()
-        e2 = self.Exec('mq', [2, 5, 3], self)
-        e2.processar()
-        
-    
-        print(alg)
+        for comando, operandos in alg:
+            Exec(comando, operandos, self)
         print(self.mp)
         print(self.registradores)
 
 
-    class Exec:
-        def __init__(self, comando, operandos, pc):
-            if comando in ['add', 'sub', 'mul', 'div']:
-                opc = pc.opcAritmetica(pc)
-                self.executar = opc.processar(comando, *operandos)
-            elif comando in ['mq', 'meq', 'eq']:
-                opc = pc.opcLogica(pc)
-                self.executar = opc.processar(comando, *operandos)
-            
-        def processar(self):
-            resultado = self.executar
-            # print(resultado)
-        
-    # IMPLEMENTAÇÃO DO PROCESSAMENTO DOS COMANDOS
-    class IMPL_COMANDOS_INTERNOS(ABC):
-        @abstractmethod
-        def processar(self, comando, operando1, operando2):
-            pass
-            
-    class opcAritmetica(IMPL_COMANDOS_INTERNOS):
-        def __init__(self, pc):
-            self.OPERACOES_ARITMETICAS = operacoesAritmeticas.calc
-            self.pc = pc
-        def processar(self, comando, destino ,operando1, operando2):
-            resp = self.OPERACOES_ARITMETICAS(comando, operando1, operando2)
-            retorno = self.pc.escrever(resp, destino)
-            return retorno
-        
-    class opcLogica(IMPL_COMANDOS_INTERNOS):
-        def __init__(self, pc):
-            self.OPERACOES_LOGICAS = operacoesLogicas.comparar
-            self.pc = pc
-        def processar(self, comando, destino ,operando1, operando2):
-            print(comando, ' ', destino, ' ', operando1, ' ', operando2)
-            resp = self.OPERACOES_LOGICAS(comando, operando1, operando2)
-            retorno = self.pc.escrever(resp, destino)
-            return retorno
-    
     def escrever(self, valor, destino):
+        primeiraLetra = destino[0]
         
-        if destino == "MP":
-            linha, coluna = self.definirPosicaoMP(self.mp)
-            self.escrita(linha, coluna, self.mp, valor)
+        # Escrita em posição definida pelo usuário na MP
+        if primeiraLetra == 'r':
+            numeroRegistrador = self.obterEnderecoRegistrador(destino)
+            self.registradores[numeroRegistrador] = valor
+            return numeroRegistrador
+        else: 
+            endMP = ast.literal_eval(destino)
+            linha, coluna = endMP
+            self.mp = self.escrita(linha, coluna, self.mp, valor)
             return (linha, coluna)
-        else:
-            self.registradores[destino] = valor
-            return destino
+        # Escrita em um registrador
+        
+           
+        
+    def ler(self, endereco):
+        if isinstance(endereco, tuple):
+            valor = self.leitura(endereco)
+            return valor
+        valor = self.registradores[endereco]
+        return valor
+    
+    def obterEnderecoRegistrador(self, end):
+        padrao = r'\[(\d+)\]'
+        match = re.search(padrao, end)
+        numeroRegistrador = int(match.group(1))
+        return numeroRegistrador

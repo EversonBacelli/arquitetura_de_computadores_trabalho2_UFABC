@@ -2,5 +2,5 @@ import numpy as np
 
 
 def carregarRegistradores():
-    registradores = np.zeros((8), dtype=int)
+    registradores = np.full((8), np.nan, dtype=float)
     return registradores

@@ -1,5 +1,21 @@
 [
     {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -27,35 +43,236 @@
         "documentation": {}
     },
     {
-        "label": "PC",
-        "importPath": "projeto2_meu_pc.meuPC",
-        "description": "projeto2_meu_pc.meuPC",
+        "label": "realizarSoma",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
         "isExtraImport": true,
-        "detail": "projeto2_meu_pc.meuPC",
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "realizarSubtracao",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "realizarMultiplicacao",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "realizarDivisao",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "definirSeEmaior",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "documentation": {}
+    },
+    {
+        "label": "definirSeEmenor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "documentation": {}
+    },
+    {
+        "label": "definirSeEigual",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.implOpcLogica",
+        "documentation": {}
+    },
+    {
+        "label": "PC",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.meuPC",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.meuPC",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.meuPC",
+        "documentation": {}
+    },
+    {
+        "label": "re,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re.",
+        "description": "re.",
+        "detail": "re.",
         "documentation": {}
     },
     {
         "label": "buscarInstrucoes",
-        "importPath": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
-        "description": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.instrucoes.carregarInstrucoes",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.instrucoes.carregarInstrucoes",
         "isExtraImport": true,
-        "detail": "projeto2_meu_pc.instrucoes.carregarInstrucoes",
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.instrucoes.carregarInstrucoes",
         "documentation": {}
     },
     {
         "label": "carregarMemoriaPrincipal",
-        "importPath": "projeto2_meu_pc.memoriaPrincipal.mp",
-        "description": "projeto2_meu_pc.memoriaPrincipal.mp",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
         "isExtraImport": true,
-        "detail": "projeto2_meu_pc.memoriaPrincipal.mp",
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "selecionarPosicaoMP",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "lerEmMP",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "escreverEmMP",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.memoriaPrincipal.mp",
         "documentation": {}
     },
     {
         "label": "carregarRegistradores",
-        "importPath": "projeto2_meu_pc.registradores.rg",
-        "description": "projeto2_meu_pc.registradores.rg",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.registradores.rg",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.registradores.rg",
         "isExtraImport": true,
-        "detail": "projeto2_meu_pc.registradores.rg",
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.registradores.rg",
+        "documentation": {}
+    },
+    {
+        "label": "carregarPrograma",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.programas.carregarProgramas",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.programas.carregarProgramas",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.programas.carregarProgramas",
+        "documentation": {}
+    },
+    {
+        "label": "operacoesAritmeticas",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcAritmeticas",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcAritmeticas",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "operacoesLogicas",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcLogicas",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcLogicas",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcLogicas",
+        "documentation": {}
+    },
+    {
+        "label": "preProcessamento",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.programas.preExec",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.programas.preExec",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.programas.preExec",
+        "documentation": {}
+    },
+    {
+        "label": "Exec",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.exec",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.exec",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "Exec",
+        "kind": 6,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "class Exec:\n        def __init__(self, comando, operandos, pc):\n            self. comando = comando\n            self.operandos = operandos\n            if comando in ['add', 'sub', 'mul', 'div']:\n                opc = opcAritmetica(pc)\n                self.executar = opc.processar(comando, *operandos)\n            elif comando in ['mq', 'meq', 'eq']:\n                opc = opcLogica(pc)\n                self.executar = opc.processar(comando, *operandos)",
+        "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "IMPL_COMANDOS_INTERNOS",
+        "kind": 6,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "class IMPL_COMANDOS_INTERNOS(ABC):\n    @abstractmethod\n    def processar(self, comando, operando1, operando2):\n            pass\nclass opcAritmetica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.OPERACOES_ARITMETICAS = pc.OPERACOES_ARITMETICAS\n        self.pc = pc\n    def processar(self, comando, destino ,operando1, operando2):\n        operando1 = verificarValor(operando1, self.pc)",
+        "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "opcAritmetica",
+        "kind": 6,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "class opcAritmetica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.OPERACOES_ARITMETICAS = pc.OPERACOES_ARITMETICAS\n        self.pc = pc\n    def processar(self, comando, destino ,operando1, operando2):\n        operando1 = verificarValor(operando1, self.pc)\n        operando2 = verificarValor(operando2, self.pc)\n        resp = self.OPERACOES_ARITMETICAS(comando, float(operando1), float(operando2))\n        retorno = self.pc.escrever(resp, destino)\n        return retorno",
+        "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "opcLogica",
+        "kind": 6,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "class opcLogica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.OPERACOES_LOGICAS = pc.OPERACOES_LOGICAS\n        self.pc = pc\n    def processar(self, comando, destino ,operando1, operando2):\n        resp = self.OPERACOES_LOGICAS(comando, operando1, operando2)\n        retorno = self.pc.escrever(resp, destino)\n        return retorno\nclass opcEscrita(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):",
+        "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "opcEscrita",
+        "kind": 6,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "class opcEscrita(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.pc = pc\n    def processar(self, comando, endereco, valor):\n        valor = verificarValor(valor, self.pc)\n        posicao = self.pc.escrever(valor, endereco)\n        return posicao\nclass opcLeitura(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.pc = pc",
+        "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "opcLeitura",
+        "kind": 6,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "class opcLeitura(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.pc = pc\n    def processar(self, endereco):\n        valor = self.pc.ler(endereco)\n        return valor\ndef verificarValor(operando, pc):\n    if isinstance(operando, str):\n            resp = validarNumerico(operando)\n            if resp:",
+        "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "kind": 2,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "def verificarValor(operando, pc):\n    if isinstance(operando, str):\n            resp = validarNumerico(operando)\n            if resp:\n                return float(operando)\n            numeroRegistrador = pc.obterEnderecoRegistrador(operando)\n            operando = pc.ler(numeroRegistrador)\n            return operando\n    return operando\ndef validarNumerico(valor):",
+        "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "kind": 2,
+        "importPath": "execucao.exec",
+        "description": "execucao.exec",
+        "peekOfCode": "def validarNumerico(valor):\n    try:\n        # 1. Remove espaços e quebras de linha antes de tentar a conversão\n        float(valor.strip()) \n        return True\n    except ValueError:\n        return False",
+        "detail": "execucao.exec",
         "documentation": {}
     },
     {
@@ -63,7 +280,7 @@
         "kind": 2,
         "importPath": "instrucoes.carregarInstrucoes",
         "description": "instrucoes.carregarInstrucoes",
-        "peekOfCode": "def buscarInstrucoes():\n    caminho_relativo = \"projeto2_meu_pc/instrucoes/instrucoes.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n            conteudo = json.load(arquivo)  # Corrigido: passar objeto de arquivo\n            return conteudo\n    else:\n        print(\"\\nArquivo não encontrado nesse caminho.\")",
+        "peekOfCode": "def buscarInstrucoes():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/instrucoes/instrucoes.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n            conteudo = json.load(arquivo)  # Corrigido: passar objeto de arquivo\n            return conteudo\n    else:\n        print(\"\\nArquivo não encontrado nesse caminho.\")",
         "detail": "instrucoes.carregarInstrucoes",
         "documentation": {}
     },
@@ -72,8 +289,134 @@
         "kind": 2,
         "importPath": "memoriaPrincipal.mp",
         "description": "memoriaPrincipal.mp",
-        "peekOfCode": "def carregarMemoriaPrincipal():\n    mp = np.zeros((8, 8), dtype=int)\n    return mp",
+        "peekOfCode": "def carregarMemoriaPrincipal():\n    mp = np.full((8, 8), np.nan, dtype=float)\n    return mp\ndef selecionarPosicaoMP(mp):\n    for i in range(len(mp)):\n        for j in range(len(mp[0])):\n            if np.isnan(mp[i][j]):\n                return i, j\n    # 2. Obtenha as dimensões (shape)\n    num_linhas, num_colunas = mp.shape",
         "detail": "memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "selecionarPosicaoMP",
+        "kind": 2,
+        "importPath": "memoriaPrincipal.mp",
+        "description": "memoriaPrincipal.mp",
+        "peekOfCode": "def selecionarPosicaoMP(mp):\n    for i in range(len(mp)):\n        for j in range(len(mp[0])):\n            if np.isnan(mp[i][j]):\n                return i, j\n    # 2. Obtenha as dimensões (shape)\n    num_linhas, num_colunas = mp.shape\n    # 3. Gere índices aleatórios\n    # O np.random.randint(low, high) é exclusivo no 'high'.\n    indice_linha_aleatorio = np.random.randint(0, num_linhas)",
+        "detail": "memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "lerEmMP",
+        "kind": 2,
+        "importPath": "memoriaPrincipal.mp",
+        "description": "memoriaPrincipal.mp",
+        "peekOfCode": "def lerEmMP(linha, coluna, mp):\n    try:\n        conteudo = mp[linha][coluna]\n        return conteudo\n    except: \n        return Exception\ndef escreverEmMP(linha, coluna, mp, conteudo):\n    try:\n        mp[linha][coluna] = conteudo\n        return mp",
+        "detail": "memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "escreverEmMP",
+        "kind": 2,
+        "importPath": "memoriaPrincipal.mp",
+        "description": "memoriaPrincipal.mp",
+        "peekOfCode": "def escreverEmMP(linha, coluna, mp, conteudo):\n    try:\n        mp[linha][coluna] = conteudo\n        return mp\n    except:\n        return Exception",
+        "detail": "memoriaPrincipal.mp",
+        "documentation": {}
+    },
+    {
+        "label": "realizarSoma",
+        "kind": 2,
+        "importPath": "operacoes_ula.implOpcAritmeticas",
+        "description": "operacoes_ula.implOpcAritmeticas",
+        "peekOfCode": "def realizarSoma(op1, op2) -> float:\n    resultado = op1 + op2\n    return resultado\ndef realizarSubtracao(op1, op2) -> float:\n    resultado = op1 - op2\n    return resultado\ndef realizarMultiplicacao(op1, op2) -> float:\n    resultado = op1 * op2\n    return resultado\ndef realizarDivisao(op1, op2) -> float:",
+        "detail": "operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "realizarSubtracao",
+        "kind": 2,
+        "importPath": "operacoes_ula.implOpcAritmeticas",
+        "description": "operacoes_ula.implOpcAritmeticas",
+        "peekOfCode": "def realizarSubtracao(op1, op2) -> float:\n    resultado = op1 - op2\n    return resultado\ndef realizarMultiplicacao(op1, op2) -> float:\n    resultado = op1 * op2\n    return resultado\ndef realizarDivisao(op1, op2) -> float:\n    try:\n        resultado = op1 / op2\n        return resultado",
+        "detail": "operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "realizarMultiplicacao",
+        "kind": 2,
+        "importPath": "operacoes_ula.implOpcAritmeticas",
+        "description": "operacoes_ula.implOpcAritmeticas",
+        "peekOfCode": "def realizarMultiplicacao(op1, op2) -> float:\n    resultado = op1 * op2\n    return resultado\ndef realizarDivisao(op1, op2) -> float:\n    try:\n        resultado = op1 / op2\n        return resultado\n    except:\n        return ArithmeticError",
+        "detail": "operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "realizarDivisao",
+        "kind": 2,
+        "importPath": "operacoes_ula.implOpcAritmeticas",
+        "description": "operacoes_ula.implOpcAritmeticas",
+        "peekOfCode": "def realizarDivisao(op1, op2) -> float:\n    try:\n        resultado = op1 / op2\n        return resultado\n    except:\n        return ArithmeticError",
+        "detail": "operacoes_ula.implOpcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "definirSeEmaior",
+        "kind": 2,
+        "importPath": "operacoes_ula.implOpcLogica",
+        "description": "operacoes_ula.implOpcLogica",
+        "peekOfCode": "def definirSeEmaior(operando1, operando2):\n    resposta = 1 if operando1 > operando2 else 0\n    return resposta\ndef definirSeEmenor(operando1, operando2):\n    resposta = 1 if operando1 < operando2 else 0\n    return resposta\ndef definirSeEigual(operando1, operando2):\n    resposta = 1 if operando1 == operando2 else 0\n    return resposta",
+        "detail": "operacoes_ula.implOpcLogica",
+        "documentation": {}
+    },
+    {
+        "label": "definirSeEmenor",
+        "kind": 2,
+        "importPath": "operacoes_ula.implOpcLogica",
+        "description": "operacoes_ula.implOpcLogica",
+        "peekOfCode": "def definirSeEmenor(operando1, operando2):\n    resposta = 1 if operando1 < operando2 else 0\n    return resposta\ndef definirSeEigual(operando1, operando2):\n    resposta = 1 if operando1 == operando2 else 0\n    return resposta",
+        "detail": "operacoes_ula.implOpcLogica",
+        "documentation": {}
+    },
+    {
+        "label": "definirSeEigual",
+        "kind": 2,
+        "importPath": "operacoes_ula.implOpcLogica",
+        "description": "operacoes_ula.implOpcLogica",
+        "peekOfCode": "def definirSeEigual(operando1, operando2):\n    resposta = 1 if operando1 == operando2 else 0\n    return resposta",
+        "detail": "operacoes_ula.implOpcLogica",
+        "documentation": {}
+    },
+    {
+        "label": "operacoesAritmeticas",
+        "kind": 6,
+        "importPath": "operacoes_ula.opcAritmeticas",
+        "description": "operacoes_ula.opcAritmeticas",
+        "peekOfCode": "class operacoesAritmeticas:\n    def calc(opc, operando1, operando2):\n        if opc == 'add':\n            resp = realizarSoma(operando1, operando2)\n            return resp\n        elif opc == 'sub':\n            resp = realizarSubtracao(operando1, operando2)\n            return resp\n        elif opc == 'div':\n            resp = realizarDivisao(operando1, operando2)",
+        "detail": "operacoes_ula.opcAritmeticas",
+        "documentation": {}
+    },
+    {
+        "label": "operacoesLogicas",
+        "kind": 6,
+        "importPath": "operacoes_ula.opcLogicas",
+        "description": "operacoes_ula.opcLogicas",
+        "peekOfCode": "class operacoesLogicas:\n    def comparar(opc, operando1, operando2):\n        if opc == 'mq':   # maior que\n            resp = definirSeEmaior(operando1, operando2)\n            return resp\n        elif opc == 'meq':\n            resp = definirSeEmenor(operando1, operando2)\n            return resp\n        elif opc == 'eq':\n            resp = definirSeEigual( operando1, operando2)",
+        "detail": "operacoes_ula.opcLogicas",
+        "documentation": {}
+    },
+    {
+        "label": "carregarPrograma",
+        "kind": 2,
+        "importPath": "programas.carregarProgramas",
+        "description": "programas.carregarProgramas",
+        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/areaTriangulo.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
+        "detail": "programas.carregarProgramas",
+        "documentation": {}
+    },
+    {
+        "label": "preProcessamento",
+        "kind": 2,
+        "importPath": "programas.preExec",
+        "description": "programas.preExec",
+        "peekOfCode": "def preProcessamento(ALGORITMO):\n    alg = ALGORITMO\n    comandos = []\n    for linha in alg[2:]:\n        comando, operandos = linha.split('|', 1)\n        comando = comando.strip()\n        operandos = operandos.strip()\n        operandos = operandos.split(';')\n        for i in range(len(operandos)):\n            operandos[i] = operandos[i].strip()",
+        "detail": "programas.preExec",
         "documentation": {}
     },
     {
@@ -81,7 +424,7 @@
         "kind": 2,
         "importPath": "registradores.rg",
         "description": "registradores.rg",
-        "peekOfCode": "def carregarRegistradores():\n    registradores = np.zeros((8), dtype=int)\n    return registradores",
+        "peekOfCode": "def carregarRegistradores():\n    registradores = np.full((8), np.nan, dtype=float)\n    return registradores",
         "detail": "registradores.rg",
         "documentation": {}
     },
@@ -90,7 +433,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "pc = PC()\nprint(pc.instrucoes)\nprint(pc.mp)\nprint(pc.registradores)",
+        "peekOfCode": "pc = PC()\n# for i in pc.instrucoes['instrucoes']:\n#     comando = i['comando']\n#     operandos = i['campos_que_exige']\n#     explicacao = i['explicacao']\n#     print(comando, ' - ', operandos, '  - ', explicacao)\npc.exec()\n# for comando, operandos in comandos:\n#     print(comando, ' ', operandos)\n# # print(comandos)",
         "detail": "index",
         "documentation": {}
     },
@@ -99,7 +442,7 @@
         "kind": 6,
         "importPath": "meuPC",
         "description": "meuPC",
-        "peekOfCode": "class PC:\n    def __init__(self):\n        self.instrucoes = buscarInstrucoes()\n        self.mp = carregarMemoriaPrincipal()\n        self.registradores = carregarRegistradores()",
+        "peekOfCode": "class PC:\n    ALGORITMO = []\n    def __init__(self):\n        # CONJUNTO DE INSTRUCOES ISA\n        self.instrucoes = buscarInstrucoes()\n        # RECURSOS DE MEMORIA\n        self.mp = carregarMemoriaPrincipal()         # memória principal\n        self.definirPosicaoMP = selecionarPosicaoMP\n        self.leitura = lerEmMP\n        self.escrita = escreverEmMP",
         "detail": "meuPC",
         "documentation": {}
     }

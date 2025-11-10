@@ -5,7 +5,7 @@ def carregarMemoriaPrincipal():
     return mp
 
 def selecionarPosicaoMP(mp):
-    tentativas = 0
+    
     
     for i in range(len(mp)):
         for j in range(len(mp[0])):
@@ -31,6 +31,7 @@ def lerEmMP(linha, coluna, mp):
 def escreverEmMP(linha, coluna, mp, conteudo):
     try:
         mp[linha][coluna] = conteudo
+        return mp
     except:
         return Exception
     
