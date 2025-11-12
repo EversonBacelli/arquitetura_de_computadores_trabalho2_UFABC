@@ -6,7 +6,6 @@ es | registrador[2] ; 5
 mul | registrado[2]; registrador[1] ; registrador[2]
 div | registrador[2] ; registrador[2] ; 2.0
 es  | (5,4) ; registrador[2]
-saida | registrador[2]
 
 
 

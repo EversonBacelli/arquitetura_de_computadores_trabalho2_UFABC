@@ -35,9 +35,15 @@ class PC:
         self.PILHA_EXECUCAO = []
         
     def exec(self):
+        execucao = []
         alg = preProcessamento(PC.ALGORITMO[0])
         for comando, operandos in alg:
-            Exec(comando, operandos, self)
+            e = Exec(comando, operandos, self)
+            execucao.append(e)
+
+        for tarefa in execucao:
+            tarefa.processar()    
+        
         print(self.mp)
         print(self.registradores)
 

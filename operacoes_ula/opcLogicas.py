@@ -14,3 +14,5 @@ class operacoesLogicas:
             return resp
         else:
             return Exception
+        
+        

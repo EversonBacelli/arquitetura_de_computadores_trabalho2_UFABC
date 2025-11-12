@@ -1,5 +1,77 @@
 [
     {
+        "label": "IMPL_COMANDOS_INTERNOS",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "documentation": {}
+    },
+    {
+        "label": "IMPL_COMANDOS_INTERNOS",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "documentation": {}
+    },
+    {
+        "label": "IMPL_COMANDOS_INTERNOS",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "documentation": {}
+    },
+    {
+        "label": "IMPL_COMANDOS_INTERNOS",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "documentation": {}
+    },
+    {
+        "label": "IMPL_COMANDOS_INTERNOS",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "documentation": {}
+    },
+    {
+        "label": "opcAritmetica",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAritmetica",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAritmetica",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAritmetica",
+        "documentation": {}
+    },
+    {
+        "label": "opcLogica",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLogica",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLogica",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLogica",
+        "documentation": {}
+    },
+    {
+        "label": "opcEscrita",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcEscrita",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcEscrita",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcEscrita",
+        "documentation": {}
+    },
+    {
+        "label": "opcLeitura",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLeitura",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLeitura",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLeitura",
+        "documentation": {}
+    },
+    {
         "label": "ABC",
         "importPath": "abc",
         "description": "abc",
@@ -13,6 +85,70 @@
         "description": "abc",
         "isExtraImport": true,
         "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
         "documentation": {}
     },
     {
@@ -208,71 +344,71 @@
         "kind": 6,
         "importPath": "execucao.exec",
         "description": "execucao.exec",
-        "peekOfCode": "class Exec:\n        def __init__(self, comando, operandos, pc):\n            self. comando = comando\n            self.operandos = operandos\n            if comando in ['add', 'sub', 'mul', 'div']:\n                opc = opcAritmetica(pc)\n                self.executar = opc.processar(comando, *operandos)\n            elif comando in ['mq', 'meq', 'eq']:\n                opc = opcLogica(pc)\n                self.executar = opc.processar(comando, *operandos)",
+        "peekOfCode": "class Exec:\n        def __init__(self, comando, operandos, pc):\n            self. comando = comando\n            self.operandos = operandos\n            self.opc = None\n            if comando in ['add', 'sub', 'mul', 'div']:\n                self.opc = opcAritmetica(pc, comando, *operandos)\n            elif comando in ['mq', 'meq', 'eq']:\n                self.opc = opcLogica(pc, comando, *operandos)\n            elif comando == 'es':",
         "detail": "execucao.exec",
         "documentation": {}
     },
     {
         "label": "IMPL_COMANDOS_INTERNOS",
         "kind": 6,
-        "importPath": "execucao.exec",
-        "description": "execucao.exec",
-        "peekOfCode": "class IMPL_COMANDOS_INTERNOS(ABC):\n    @abstractmethod\n    def processar(self, comando, operando1, operando2):\n            pass\nclass opcAritmetica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.OPERACOES_ARITMETICAS = pc.OPERACOES_ARITMETICAS\n        self.pc = pc\n    def processar(self, comando, destino ,operando1, operando2):\n        operando1 = verificarValor(operando1, self.pc)",
-        "detail": "execucao.exec",
+        "importPath": "execucao.opcAbstrata",
+        "description": "execucao.opcAbstrata",
+        "peekOfCode": "class IMPL_COMANDOS_INTERNOS(ABC):\n    @abstractmethod\n    def processar(self, comando, operando1, operando2):\n            pass",
+        "detail": "execucao.opcAbstrata",
         "documentation": {}
     },
     {
         "label": "opcAritmetica",
         "kind": 6,
-        "importPath": "execucao.exec",
-        "description": "execucao.exec",
-        "peekOfCode": "class opcAritmetica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.OPERACOES_ARITMETICAS = pc.OPERACOES_ARITMETICAS\n        self.pc = pc\n    def processar(self, comando, destino ,operando1, operando2):\n        operando1 = verificarValor(operando1, self.pc)\n        operando2 = verificarValor(operando2, self.pc)\n        resp = self.OPERACOES_ARITMETICAS(comando, float(operando1), float(operando2))\n        retorno = self.pc.escrever(resp, destino)\n        return retorno",
-        "detail": "execucao.exec",
-        "documentation": {}
-    },
-    {
-        "label": "opcLogica",
-        "kind": 6,
-        "importPath": "execucao.exec",
-        "description": "execucao.exec",
-        "peekOfCode": "class opcLogica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.OPERACOES_LOGICAS = pc.OPERACOES_LOGICAS\n        self.pc = pc\n    def processar(self, comando, destino ,operando1, operando2):\n        resp = self.OPERACOES_LOGICAS(comando, operando1, operando2)\n        retorno = self.pc.escrever(resp, destino)\n        return retorno\nclass opcEscrita(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):",
-        "detail": "execucao.exec",
+        "importPath": "execucao.opcAritmetica",
+        "description": "execucao.opcAritmetica",
+        "peekOfCode": "class opcAritmetica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, destino, operando1, operando2):\n        self.OPERACOES_ARITMETICAS = pc.OPERACOES_ARITMETICAS\n        self.pc = pc\n        self.comando = comando\n        self.destino = destino\n        self.operando1 = operando1\n        self.operando2 = operando2\n    def processar(self):\n        operando1 = verificarValor(self.operando1, self.pc)",
+        "detail": "execucao.opcAritmetica",
         "documentation": {}
     },
     {
         "label": "opcEscrita",
         "kind": 6,
-        "importPath": "execucao.exec",
-        "description": "execucao.exec",
-        "peekOfCode": "class opcEscrita(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.pc = pc\n    def processar(self, comando, endereco, valor):\n        valor = verificarValor(valor, self.pc)\n        posicao = self.pc.escrever(valor, endereco)\n        return posicao\nclass opcLeitura(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.pc = pc",
-        "detail": "execucao.exec",
+        "importPath": "execucao.opcEscrita",
+        "description": "execucao.opcEscrita",
+        "peekOfCode": "class opcEscrita(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, destino, operando1):\n        self.pc = pc\n        self.comando = comando\n        self.destino = destino\n        self.operando1 = operando1\n    def processar(self):\n        valor = verificarValor(self.operando1, self.pc)\n        posicao = self.pc.escrever(valor, self.destino)\n        return posicao",
+        "detail": "execucao.opcEscrita",
         "documentation": {}
     },
     {
         "label": "opcLeitura",
         "kind": 6,
-        "importPath": "execucao.exec",
-        "description": "execucao.exec",
-        "peekOfCode": "class opcLeitura(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc):\n        self.pc = pc\n    def processar(self, endereco):\n        valor = self.pc.ler(endereco)\n        return valor\ndef verificarValor(operando, pc):\n    if isinstance(operando, str):\n            resp = validarNumerico(operando)\n            if resp:",
-        "detail": "execucao.exec",
+        "importPath": "execucao.opcLeitura",
+        "description": "execucao.opcLeitura",
+        "peekOfCode": "class opcLeitura(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, endereco):\n        self.pc = pc\n        self.endereco = endereco\n    def processar(self):\n        valor = self.pc.ler(self.endereco)\n        return valor",
+        "detail": "execucao.opcLeitura",
+        "documentation": {}
+    },
+    {
+        "label": "opcLogica",
+        "kind": 6,
+        "importPath": "execucao.opcLogica",
+        "description": "execucao.opcLogica",
+        "peekOfCode": "class opcLogica(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, destino, operando1, operando2):\n        self.OPERACOES_LOGICAS = pc.OPERACOES_LOGICAS\n        self.pc = pc\n        self.comando = comando\n        self.destino = destino\n        self.operando1 = operando1\n        self.operando2 = operando2\n    def processar(self):\n        operando1 = verificarValor(self.operando1, self.pc)",
+        "detail": "execucao.opcLogica",
         "documentation": {}
     },
     {
         "label": "verificarValor",
         "kind": 2,
-        "importPath": "execucao.exec",
-        "description": "execucao.exec",
+        "importPath": "execucao.utils",
+        "description": "execucao.utils",
         "peekOfCode": "def verificarValor(operando, pc):\n    if isinstance(operando, str):\n            resp = validarNumerico(operando)\n            if resp:\n                return float(operando)\n            numeroRegistrador = pc.obterEnderecoRegistrador(operando)\n            operando = pc.ler(numeroRegistrador)\n            return operando\n    return operando\ndef validarNumerico(valor):",
-        "detail": "execucao.exec",
+        "detail": "execucao.utils",
         "documentation": {}
     },
     {
         "label": "validarNumerico",
         "kind": 2,
-        "importPath": "execucao.exec",
-        "description": "execucao.exec",
+        "importPath": "execucao.utils",
+        "description": "execucao.utils",
         "peekOfCode": "def validarNumerico(valor):\n    try:\n        # 1. Remove espaços e quebras de linha antes de tentar a conversão\n        float(valor.strip()) \n        return True\n    except ValueError:\n        return False",
-        "detail": "execucao.exec",
+        "detail": "execucao.utils",
         "documentation": {}
     },
     {
@@ -406,7 +542,7 @@
         "kind": 2,
         "importPath": "programas.carregarProgramas",
         "description": "programas.carregarProgramas",
-        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/areaTriangulo.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
+        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/operacaoLogica.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
         "detail": "programas.carregarProgramas",
         "documentation": {}
     },
