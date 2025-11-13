@@ -13,8 +13,7 @@ class opcLogica(IMPL_COMANDOS_INTERNOS):
     def processar(self):
         operando1 = verificarValor(self.operando1, self.pc)
         operando2 = verificarValor(self.operando2, self.pc)
-        print(self.comando, '  ', self.destino, '  ', operando1, '    ', operando2)
-        print('---------')
+        
         resp = self.OPERACOES_LOGICAS(self.comando, operando1, operando2)
         retorno = self.pc.escrever(resp, self.destino)
         return retorno

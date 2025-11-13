@@ -1,5 +1,5 @@
 TITULO  :   "operacao logica" 
-
+TAGS | if ; else ; fim
 EXEC
 es | registrador[1] ; 1 
 es | registrador[2] ; 3

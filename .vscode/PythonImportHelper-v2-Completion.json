@@ -551,7 +551,7 @@
         "kind": 2,
         "importPath": "programas.preExec",
         "description": "programas.preExec",
-        "peekOfCode": "def preProcessamento(ALGORITMO):\n    alg = ALGORITMO\n    comandos = []\n    for linha in alg[2:]:\n        comando, operandos = linha.split('|', 1)\n        comando = comando.strip()\n        operandos = operandos.strip()\n        operandos = operandos.split(';')\n        for i in range(len(operandos)):\n            operandos[i] = operandos[i].strip()",
+        "peekOfCode": "def preProcessamento(ALGORITMO):\n    alg = ALGORITMO\n    comandos = []\n    tags = alg[1]\n    _, elements = tags.split('|', 1)\n    elements = elements.strip()\n    elements = elements.split(';')\n    for linha in alg[3:]:\n        comando, operandos = linha.split('|', 1)\n        comando = comando.strip()",
         "detail": "programas.preExec",
         "documentation": {}
     },

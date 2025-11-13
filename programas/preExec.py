@@ -4,8 +4,14 @@ def preProcessamento(ALGORITMO):
     alg = ALGORITMO
 
     comandos = []
-
-    for linha in alg[2:]:
+    tags = alg[1]
+    
+    _, elements = tags.split('|', 1)
+    elements = elements.strip()
+    elements = elements.split(';')
+    
+    
+    for linha in alg[3:]:
         comando, operandos = linha.split('|', 1)
         comando = comando.strip()
         operandos = operandos.strip()
@@ -14,4 +20,4 @@ def preProcessamento(ALGORITMO):
             operandos[i] = operandos[i].strip()
         comandos.append((comando, operandos))
     
-    return comandos
+    return comandos, elements

@@ -36,7 +36,8 @@ class PC:
         
     def exec(self):
         execucao = []
-        alg = preProcessamento(PC.ALGORITMO[0])
+        alg, tags = preProcessamento(PC.ALGORITMO[0])
+        print(tags)
         for comando, operandos in alg:
             e = Exec(comando, operandos, self)
             execucao.append(e)
