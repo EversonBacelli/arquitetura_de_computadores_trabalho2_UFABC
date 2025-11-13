@@ -3,6 +3,8 @@ from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAritmetica import o
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLogica import opcLogica
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcEscrita import opcEscrita
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLeitura import opcLeitura
+from arquitetura_de_computadores_trabalho2_UFABC.execucao.jump import jump
+from arquitetura_de_computadores_trabalho2_UFABC.execucao.tag import tag
 
 
 # Padrão de Projeto Strategy
@@ -19,7 +21,11 @@ class Exec:
                 self.opc = opcEscrita(pc, comando, *operandos)
             elif comando == 'le':
                 self.opc = opcLeitura(pc, comando, *operandos)
-            
+            elif comando == 'jump':
+                self.opc = jump(pc, comando, *operandos)
+            elif comando in ['FIM', 'ELSE']:
+                self.opc = tag(comando)
+
         def processar(self):
             self.opc.processar()
         
