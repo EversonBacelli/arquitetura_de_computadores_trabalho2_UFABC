@@ -4,12 +4,12 @@ EXEC
 es | registrador[1] ; 1 
 es | registrador[2] ; 3
 mq | registrado[3]; registrador[1] ; registrador[2]
-jump | registrador[3]; FIM ; ELSE
+jump | registrador[3]; DESVIO ; FIM ; ELSE
 add | registrador[6]; 2.0 ; 2.0
 es | (6,4) ;  registrador[6]
-FIM 
+DESVIO 
 ELSE 
-sub | registrador[7]; 10; 5
+mul | registrador[7]; 10; 5
 es | (6,5) ;  registrador[7]
 FIM 
 
