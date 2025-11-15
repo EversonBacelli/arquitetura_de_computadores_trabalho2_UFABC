@@ -1,7 +1,7 @@
 import os
 
 def carregarPrograma():
-    caminho_relativo = "arquitetura_de_computadores_trabalho2_UFABC/programas/saltoCondicional.txt"
+    caminho_relativo = "arquitetura_de_computadores_trabalho2_UFABC/programas/laco_repeticao.txt"
     caminho_absoluto = os.path.abspath(caminho_relativo)
     
     # Inicializa a lista que armazenará o conteúdo

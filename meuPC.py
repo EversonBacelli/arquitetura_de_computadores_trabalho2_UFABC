@@ -44,6 +44,9 @@ class PC:
             e = Exec(comando, operandos, self, i)
             self.execucao.append(e)
         
+        
+        
+        
         # Vincular Nós, 
         for i in range(len(self.execucao) -1 ):
             self.execucao[i].definirProximo(i)
@@ -57,13 +60,13 @@ class PC:
         # print(self.execucao[0].comando, '  ', self.execucao[0].next.comando )
         # print(self.execucao[1].comando, '  ', self.execucao[1].next.comando)
         # print(self.execucao[2].comando,'  ', self.execucao[2].next.comando)
-        # print(self.execucao[3].comando,'  ', self.execucao[3].next)
+        # print(self.execucao[3].comando,'  ', self.execucao[3].next.comando)
         # print(self.execucao[4].comando,'  ', self.execucao[4].next.comando)
         # print(self.execucao[5].comando,'  ', self.execucao[5].next.comando)
         # print(self.execucao[6].comando,'  ', self.execucao[6].next.comando)
-        # print(self.execucao[7].comando,'  ', self.execucao[7].next.comando)
+        # print(self.execucao[7].comando,'  ', self.execucao[7].next[0].comando, ' ', self.execucao[7].next[1].comando)
         # print(self.execucao[8].comando,'  ', self.execucao[8].next.comando)
-        # print(self.execucao[9].comando,'  ', self.execucao[9].next.comando)
+        # print(self.execucao[9].comando,'  ', self.execucao[9].next)
         # print(self.execucao[10].comando,'  ', self.execucao[10].next)
         
         
@@ -72,32 +75,19 @@ class PC:
         ultimoComando = self.execucao[-1]
         
         while atual != ultimoComando :
-            
-            if atual.comando == 'jump':
+            print(self.registradores)
+            if atual.comando == 'jump' or atual.comando == 'rep':
                 atual.processar() 
                 atual.opc.atualizarCondicao()
-                
-                if atual.opc.condicao == 1:
+                print("CONDICAO ", atual.opc.condicao)
+                if atual.opc.condicao == 1.0:
                     atual = atual.next[0]
                 else: 
                     atual = atual.next[1]
             else:
                 atual.processar()
                 atual = atual.next
-
-
-
-        
-        
-        
-        
-        # for tarefa in self.execucao:
-        #     if tarefa.comando is not 'jump':
-        #         print(tarefa.comando, '  ' , tarefa.next.comando)
-        #     else:
-        #         print(tarefa.comando, '  ' , tarefa.next)
-        #     tarefa.processar()    
-        
+                
         print(self.mp)
         print(self.registradores)
 
