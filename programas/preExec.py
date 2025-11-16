@@ -2,16 +2,10 @@
 
 def preProcessamento(ALGORITMO):
     alg = ALGORITMO
-   
     comandos = []
-    tags = alg[1]
-    
-    _, elements = tags.split('|', 1)
-    elements = elements.strip()
-    elements = elements.split(';')
     
     
-    for linha in alg[3:]:
+    for linha in alg[2:]:
         if linha.find('|') != -1:
             comando, operandos = linha.split('|', 1)
             comando = comando.strip()
@@ -24,4 +18,4 @@ def preProcessamento(ALGORITMO):
             linha = linha.strip()
             comandos.append((linha, None))
     
-    return comandos, elements
+    return comandos

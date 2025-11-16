@@ -1,7 +1,6 @@
 TITULO  :   "operacao logica" 
-TAGS | if ; else ; if
 EXEC
-es | registrador[1] ; 1 
+es | registrador[1] ; 6 
 es | registrador[2] ; 3
 mq | registrado[3]; registrador[1] ; registrador[2]
 meq | registrador[4] ; registrador[1] ; registrador[2]

@@ -1,11 +1,10 @@
 TITULO  :   "Salto Condicional e Incondicional" 
-TAGS | if ; else ; if
 EXEC
 es | registrador[1] ; 5 
 es | registrador[2] ; 3
 mq | registrado[3]; registrador[1] ; registrador[2]
 jump | registrador[3]; DESVIO ; FIM ; ELSE
-add | registrador[6]; 2.0 ; 2.0
+add | registrador[6]; 2.0 ; 10.0
 es | (6,4) ;  registrador[6]
 DESVIO 
 ELSE 

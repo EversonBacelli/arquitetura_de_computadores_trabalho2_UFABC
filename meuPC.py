@@ -37,13 +37,12 @@ class PC:
         
     def exec(self):
         
-        alg, tags = preProcessamento(PC.ALGORITMO[0])
+        alg = preProcessamento(PC.ALGORITMO[0])
         
         for i in range(len(alg)):
             comando, operandos = alg[i]
             e = Exec(comando, operandos, self, i)
             self.execucao.append(e)
-        
         
         
         
@@ -69,25 +68,26 @@ class PC:
         # print(self.execucao[9].comando,'  ', self.execucao[9].next)
         # print(self.execucao[10].comando,'  ', self.execucao[10].next)
         
-        
+        # # Condição de parada do process
+        self.execucao.append(None)
         
         atual = self.execucao[0]
         ultimoComando = self.execucao[-1]
         
         while atual != ultimoComando :
-            print(self.registradores)
+            atual.processar() 
             if atual.comando == 'jump' or atual.comando == 'rep':
-                atual.processar() 
+                # print(atual.opc.condicao, ' ------ ')
                 atual.opc.atualizarCondicao()
-                print("CONDICAO ", atual.opc.condicao)
-                if atual.opc.condicao == 1.0:
+                print("CONDICAO ", atual.opc.resultadoOpcLogica)
+                if atual.opc.resultadoOpcLogica == 1.0:
                     atual = atual.next[0]
                 else: 
                     atual = atual.next[1]
             else:
-                atual.processar()
                 atual = atual.next
-                
+            if atual != None:
+                print(atual.comando, ' ',self.registradores)
         print(self.mp)
         print(self.registradores)
 

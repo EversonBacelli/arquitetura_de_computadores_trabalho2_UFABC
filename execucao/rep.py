@@ -6,11 +6,12 @@ class rep(IMPL_COMANDOS_INTERNOS):
         self.pc = pc
         self.comando = comando
         self.condicao = condicao
+        self.resultadoOpcLogica = None
         self.tag_verdade = tag_verdade
         self.tag_falsa = tag_falsa
         self.posicaoVerdadeira = 0
         self.posicaoFalsa = 0
-        
+        # print('INICIADA REP, valor inicial da condicao: ', self.condicao)
     def processar(self):
         # ex = self.pc.execucao
         condicao = verificarValor(self.condicao, self.pc)
@@ -37,5 +38,7 @@ class rep(IMPL_COMANDOS_INTERNOS):
         # print(self.tag_falsa, ' --  ', self.posicaoFalsa)   
     
     def atualizarCondicao(self):
-        self.condicao = verificarValor(self.condicao, self.pc)
+        print(self.resultadoOpcLogica)
+        self.resultadoOpcLogica = verificarValor(self.condicao, self.pc)
+        print("Condição atualizada ", self.resultadoOpcLogica)
         
