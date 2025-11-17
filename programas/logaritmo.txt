@@ -18,8 +18,7 @@ add | registrador[6]; 2.0 ; 10.0
 es | (6,4) ;  registrador[6]
 DESVIO 
 ELSE 
-mul | registrador[6]; 10; 5
-es | (6,4) ;  registrador[6]
+es | (1,0) ; registrador[1]
 FIM
 
 
