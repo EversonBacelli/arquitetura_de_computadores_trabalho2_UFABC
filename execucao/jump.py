@@ -6,6 +6,7 @@ class jump(IMPL_COMANDOS_INTERNOS):
         self.pc = pc
         self.comando = comando
         self.condicao = condicao
+        self.resultadoOpcLogica = None
         self.tag_verdade = tag_verdade
         self.tag_fim = tag_fim
         self.tag_falsa = tag_falsa
@@ -25,17 +26,15 @@ class jump(IMPL_COMANDOS_INTERNOS):
         
     
     def definirPosicoesTags(self):
-        ex = self.pc.execucao
-       
+        ex = self.pc.execucao   
         for i in range(len(ex)):
             if ex[i].comando == self.tag_verdade:
                 self.posicaoV = i
-                #print(ex[i].comando, ' posicao: ', i)
             elif ex[i].comando == self.tag_falsa:
                 self.posicaoF = i
             elif ex[i].comando == self.tag_fim:
                 self.posicaoFim = i
     
     def atualizarCondicao(self):
-        self.condicao = verificarValor(self.condicao, self.pc)
+        self.resultadoOpcLogica = verificarValor(self.condicao, self.pc)
         

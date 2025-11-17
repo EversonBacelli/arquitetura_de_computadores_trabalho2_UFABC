@@ -1,0 +1,28 @@
+TITULO  :   "LOGARITMO" 
+EXEC
+es | registrador[0] ; 2.0
+es | registrador[1] ; 0.0
+es | registrador[2] ; 1.0
+es | registrador[3] ; 64.0
+es | registrador[4] ; 0
+LOOP
+mul | registrador[2] ; registrador[2] ; registrador[0]
+add | registrador[1] ; registrador[1] ; 1.0
+meq | registrado[5] ;  registrador[2] ; registrador[3]
+rep | registrador[5] ; LOOP ; END_LOOP
+END_LOOP
+mq | registrador[5] ; registrador[2] ; registrador[3]
+es | (0,1) ; registrador[5]
+jump | registrador[5] ; DESVIO ; FIM ; ELSE
+add | registrador[6]; 2.0 ; 10.0
+es | (6,4) ;  registrador[6]
+DESVIO 
+ELSE 
+mul | registrador[6]; 10; 5
+es | (6,4) ;  registrador[6]
+FIM
+
+
+
+
+

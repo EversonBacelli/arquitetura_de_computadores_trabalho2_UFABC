@@ -17,6 +17,7 @@ class Exec:
             self.index = index
             self.opc = None
             self.next = None
+            # Operações do Sistema
             if comando in ['add', 'sub', 'mul', 'div']:
                 self.opc = opcAritmetica(pc, comando, *operandos)
             elif comando in ['mq', 'meq', 'eq']:
@@ -28,7 +29,6 @@ class Exec:
             elif comando == 'jump':
                 self.opc = jump(pc, comando, *operandos)
             elif comando == 'rep':
-                print(*operandos)
                 self.opc = rep(pc, comando, *operandos)
             elif comando in ['FIM', 'ELSE', 'DESVIO', 'LOOP', 'END_LOOP']:
                 self.opc = tag(comando)
@@ -37,17 +37,14 @@ class Exec:
             self.opc.processar()
         
         def definirProximo(self, posicao):
-            # print(comando, ' posicao: ', posicao)
             ex = self
            
             if ex.comando not in ['FIM', 'DESVIO', 'jump', 'rep']:
                 ex.next = self.pc.execucao[posicao + 1]
-                # print(ex.comando, '  next: ', ex.next.comando)
             elif ex.comando == 'jump':
                 ex.opc.definirPosicoesTags() 
                 ex.next = [self.pc.execucao[posicao + 1], self.pc.execucao[ex.opc.posicaoF]]
                 self.pc.execucao[ex.opc.posicaoV].next = self.pc.execucao[ex.opc.posicaoFim]
-                # print(ex.comando, '  ', ex.next[0].comando, '  ' , ex.next[1].comando)
             elif ex.comando == 'rep':
                 ex.opc.definirPosicoesTags()
                 # print("NUMERO: ", ex.opc.posicaoVerdadeira)

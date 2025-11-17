@@ -15,8 +15,6 @@ from arquitetura_de_computadores_trabalho2_UFABC.execucao.exec import Exec
 class PC:
     ALGORITMO = []
     def __init__(self):
-        # CONJUNTO DE INSTRUCOES ISA
-        # self.instrucoes = buscarInstrucoes()
         self.execucao = []
         
         # RECURSOS DE MEMORIA
@@ -44,18 +42,10 @@ class PC:
             e = Exec(comando, operandos, self, i)
             self.execucao.append(e)
         
-        
-        
         # Vincular Nós, 
         for i in range(len(self.execucao) -1 ):
             self.execucao[i].definirProximo(i)
-            # if self.execucao[i].comando not in ['jump', 'FIM']:
-            #     print(self.execucao[i].comando, '  NEXT: ', self.execucao[i].next.comando)
-            # elif self.execucao[i].comando != 'FIM':
-            #     print(self.execucao[i].comando, '  NEXT: ', self.execucao[i].next[0].comando)
-            #     print(self.execucao[i].comando, '  NEXT: ', self.execucao[i].next[1].comando)
             
-        
         # print(self.execucao[0].comando, '  ', self.execucao[0].next.comando )
         # print(self.execucao[1].comando, '  ', self.execucao[1].next.comando)
         # print(self.execucao[2].comando,'  ', self.execucao[2].next.comando)
@@ -77,18 +67,23 @@ class PC:
         while atual != ultimoComando :
             atual.processar() 
             if atual.comando == 'jump' or atual.comando == 'rep':
-                # print(atual.opc.condicao, ' ------ ')
                 atual.opc.atualizarCondicao()
-                print("CONDICAO ", atual.opc.resultadoOpcLogica)
+                
                 if atual.opc.resultadoOpcLogica == 1.0:
                     atual = atual.next[0]
                 else: 
                     atual = atual.next[1]
             else:
                 atual = atual.next
-            if atual != None:
-                print(atual.comando, ' ',self.registradores)
+            # if atual != None:
+            #     print(atual.comando, ' ',self.registradores)
+        
+        print(PC.ALGORITMO[0][0])
+        print('-------')
+        print('MEMÓRIA PRINCIPAL: ')
         print(self.mp)
+        print('---------')
+        print('REGISTRADORES: ')
         print(self.registradores)
 
 

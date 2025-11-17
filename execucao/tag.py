@@ -8,8 +8,7 @@ class tag(IMPL_COMANDOS_INTERNOS):
        
         
     def processar(self):
-        #print(self.nome)
-        print(' ')
+        print('', end='')
     
     def updateDestino(self, posicao):
         self.destino = posicao
