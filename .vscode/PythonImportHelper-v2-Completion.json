@@ -666,7 +666,7 @@
         "kind": 2,
         "importPath": "programas.carregarProgramas",
         "description": "programas.carregarProgramas",
-        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/saltoCondicional.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
+        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/laco_repeticao.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
         "detail": "programas.carregarProgramas",
         "documentation": {}
     },

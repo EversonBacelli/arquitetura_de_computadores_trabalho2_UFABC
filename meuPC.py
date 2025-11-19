@@ -53,8 +53,8 @@ class PC:
         # print(self.execucao[4].comando,'  ')
         # print(self.execucao[5].comando,'  ', self.execucao[5].operandos)
         # print(self.execucao[6].comando,'  ', self.execucao[6].next.comando)
-        print(self.execucao[7].comando,'  ', self.execucao[7].next)
-        print(self.execucao[8].comando,'  ', self.execucao[8].next.comando)
+        # print(self.execucao[7].comando,'  ', self.execucao[7].next)
+        # print(self.execucao[8].comando,'  ', self.execucao[8].next.comando)
         # print(self.execucao[9].comando,'  ', self.execucao[9].next)
         # print(self.execucao[10].comando,'  ', self.execucao[10].next)
         

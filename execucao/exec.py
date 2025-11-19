@@ -48,8 +48,10 @@ class Exec:
                 self.pc.execucao[ex.opc.posicaoF].next = self.pc.execucao[ex.opc.posicaoF + 1]
             elif ex.comando == 'rep':
                 ex.opc.definirPosicoesTags()
-                # print("NUMERO: ", ex.opc.posicaoVerdadeira)
+                print("NUMERO: ", ex.opc.posicaoVerdadeira)
                 ex.next = [self.pc.execucao[ex.opc.posicaoVerdadeira], self.pc.execucao[posicao + 1]]
+                self.pc.execucao[ex.opc.posicaoVerdadeira].next = self.pc.execucao[ex.opc.posicaoVerdadeira + 1]
+                
             self = ex
                 
         
