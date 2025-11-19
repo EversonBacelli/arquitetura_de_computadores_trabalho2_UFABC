@@ -50,11 +50,11 @@ class PC:
         # print(self.execucao[1].comando, '  ', self.execucao[1].next.comando)
         # print(self.execucao[2].comando,'  ', self.execucao[2].next.comando)
         # print(self.execucao[3].comando,'  ', self.execucao[3].next.comando)
-        # print(self.execucao[4].comando,'  ', self.execucao[4].next.comando)
+        # print(self.execucao[4].comando,'  ')
         # print(self.execucao[5].comando,'  ', self.execucao[5].operandos)
         # print(self.execucao[6].comando,'  ', self.execucao[6].next.comando)
-        # print(self.execucao[7].comando,'  ', self.execucao[7].next[0].comando, ' ', self.execucao[7].next[1].comando)
-        # print(self.execucao[8].comando,'  ', self.execucao[8].next.comando)
+        print(self.execucao[7].comando,'  ', self.execucao[7].next)
+        print(self.execucao[8].comando,'  ', self.execucao[8].next.comando)
         # print(self.execucao[9].comando,'  ', self.execucao[9].next)
         # print(self.execucao[10].comando,'  ', self.execucao[10].next)
         
@@ -95,12 +95,10 @@ class PC:
             numeroRegistrador = self.obterEnderecoRegistrador(destino)
             self.registradores[numeroRegistrador] = valor
             return numeroRegistrador
-        else:
-            print(destino) 
+        else: 
             endMP = ast.literal_eval(destino)
             linha, coluna = endMP
             self.mp = self.escrita(linha, coluna, self.mp, valor)
-            print(self.mp[linha][coluna], 'linha: ', linha , ' coluna: ', coluna)
             return (linha, coluna)
         # Escrita em um registrador
         
