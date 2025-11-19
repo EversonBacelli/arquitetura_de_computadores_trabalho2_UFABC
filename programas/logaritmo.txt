@@ -1,35 +1,28 @@
-TITULO  :   "LOGARITMO" 
 EXEC
 es | registrador[0] ; 2.0
 es | registrador[1] ; 0.0
 es | registrador[2] ; 1.0
 es | registrador[3] ; 80.0
 es | registrador[4] ; 0
-LOOP
+LOOP1
     mul | registrador[2] ; registrador[2] ; registrador[0]
     add | registrador[1] ; registrador[1] ; 1.0
     meq | registrado[5] ;  registrador[2] ; registrador[3]
-    rep | registrador[5] ; LOOP ; END_LOOP
-END_LOOP
+    rep | registrador[5] ; LOOP1 ; END_LOOP1
+END_LOOP1
 mq | registrador[5] ; registrador[2] ; registrador[3]
-jump | registrador[5] ; DESVIO ; FIM ; ELSE
-    sub | registrador[1] ; registrador[1] ; 1
+cond | registrador[5] ; DESVIO ; FIM ; ELSE
+    sub | registrador[1] ; registrador[1] ; 1.0
     div | registrador[2] ; registrador[2] ; registrador[0]
-    sub | registrador[6] ;  registrador[3] ; registrador[2]
-    LOOP
-        add | registrador[4] ; registrador[4] ; 0.1
-        add | registrador[5] ; registrador[5] ; 1.0
-        sub | registrador[7] ; registrador[6] ; registrador[4]
-        mq | registrado[7] ;  registrador[7] ; 0.01
-        rep | registrador[7] ; LOOP ; END_LOOP
-    END_LOOP
-    es | (2,0) ; registrador[4]
-    es | (2,1) ; registrador[5]
+    sub | registrador[4] ; registrador[3] ; registrador[2]
+    es | (0,0) ; registrador[1]
+    es | (0,1) ; registrador[3]
+    es | registrador[1] ; 0
+    es | (0,2) ; registrador[1]
 DESVIO 
 ELSE 
-    es | (1,0) ; registrador[1]
+    es | (1,0) ; 20.0
 FIM
-
 
 
 

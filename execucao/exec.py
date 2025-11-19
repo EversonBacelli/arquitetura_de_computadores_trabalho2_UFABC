@@ -3,7 +3,7 @@ from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAritmetica import o
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLogica import opcLogica
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcEscrita import opcEscrita
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLeitura import opcLeitura
-from arquitetura_de_computadores_trabalho2_UFABC.execucao.jump import jump
+from arquitetura_de_computadores_trabalho2_UFABC.execucao.cond import cond
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.tag import tag
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.rep import rep
 
@@ -26,11 +26,11 @@ class Exec:
                 self.opc = opcEscrita(pc, comando, *operandos)
             elif comando == 'le':
                 self.opc = opcLeitura(pc, comando, *operandos)
-            elif comando == 'jump':
-                self.opc = jump(pc, comando, *operandos)
+            elif comando == 'cond':
+                self.opc = cond(pc, comando, *operandos)
             elif comando == 'rep':
                 self.opc = rep(pc, comando, *operandos)
-            elif comando in ['FIM', 'ELSE', 'DESVIO', 'LOOP', 'END_LOOP']:
+            else:
                 self.opc = tag(comando)
 
         def processar(self):
@@ -39,9 +39,9 @@ class Exec:
         def definirProximo(self, posicao):
             ex = self
            
-            if ex.comando not in ['FIM', 'DESVIO', 'jump', 'rep']:
+            if ex.comando not in ['cond', 'rep'] and ex.comando not in tag.LISTA_DE_TAGS:
                 ex.next = self.pc.execucao[posicao + 1]
-            elif ex.comando == 'jump':
+            elif ex.comando == 'cond':
                 ex.opc.definirPosicoesTags() 
                 ex.next = [self.pc.execucao[posicao + 1], self.pc.execucao[ex.opc.posicaoF]]
                 self.pc.execucao[ex.opc.posicaoV].next = self.pc.execucao[ex.opc.posicaoFim]

@@ -64,6 +64,102 @@
         "documentation": {}
     },
     {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
         "label": "opcAritmetica",
         "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAritmetica",
         "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAritmetica",
@@ -96,11 +192,11 @@
         "documentation": {}
     },
     {
-        "label": "jump",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.jump",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.jump",
+        "label": "cond",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.cond",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.cond",
         "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.jump",
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.cond",
         "documentation": {}
     },
     {
@@ -120,102 +216,6 @@
         "documentation": {}
     },
     {
-        "label": "verificarValor",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "validarNumerico",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "verificarValor",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "validarNumerico",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "verificarValor",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "validarNumerico",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "verificarValor",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "validarNumerico",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "verificarValor",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "validarNumerico",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "verificarValor",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
-        "label": "validarNumerico",
-        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "isExtraImport": true,
-        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
-        "documentation": {}
-    },
-    {
         "label": "ABC",
         "importPath": "abc",
         "description": "abc",
@@ -229,6 +229,23 @@
         "description": "abc",
         "isExtraImport": true,
         "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ast",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ast",
+        "description": "ast",
+        "detail": "ast",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -420,21 +437,21 @@
         "documentation": {}
     },
     {
+        "label": "cond",
+        "kind": 6,
+        "importPath": "execucao.cond",
+        "description": "execucao.cond",
+        "peekOfCode": "class cond(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, condicao=None, tag_verdade=None, tag_fim=None, tag_falsa=None):\n        self.pc = pc\n        self.comando = comando\n        self.condicao = condicao\n        self.resultadoOpcLogica = None\n        self.tag_verdade = tag_verdade\n        self.tag_fim = tag_fim\n        self.tag_falsa = tag_falsa\n        self.posicaoV = 0",
+        "detail": "execucao.cond",
+        "documentation": {}
+    },
+    {
         "label": "Exec",
         "kind": 6,
         "importPath": "execucao.exec",
         "description": "execucao.exec",
         "peekOfCode": "class Exec:\n        def __init__(self, comando, operandos, pc, index):\n            self.pc = pc\n            self. comando = comando\n            self.operandos = operandos\n            self.index = index\n            self.opc = None\n            self.next = None\n            # Operações do Sistema\n            if comando in ['add', 'sub', 'mul', 'div']:",
         "detail": "execucao.exec",
-        "documentation": {}
-    },
-    {
-        "label": "jump",
-        "kind": 6,
-        "importPath": "execucao.jump",
-        "description": "execucao.jump",
-        "peekOfCode": "class jump(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, condicao=None, tag_verdade=None, tag_fim=None, tag_falsa=None):\n        self.pc = pc\n        self.comando = comando\n        self.condicao = condicao\n        self.resultadoOpcLogica = None\n        self.tag_verdade = tag_verdade\n        self.tag_fim = tag_fim\n        self.tag_falsa = tag_falsa\n        self.posicaoV = 0",
-        "detail": "execucao.jump",
         "documentation": {}
     },
     {
@@ -496,7 +513,7 @@
         "kind": 6,
         "importPath": "execucao.tag",
         "description": "execucao.tag",
-        "peekOfCode": "class tag(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, nomeTag):\n        self.nome = nomeTag\n    def processar(self):\n        print('', end='')\n    def updateDestino(self, posicao):\n        self.destino = posicao",
+        "peekOfCode": "class tag(IMPL_COMANDOS_INTERNOS):\n    LISTA_DE_TAGS = []\n    def __init__(self, nomeTag):\n        self.nome = nomeTag\n        tag.LISTA_DE_TAGS.append(self.nome)\n    def processar(self):\n        print('', end='')\n    def updateDestino(self, posicao):\n        self.destino = posicao",
         "detail": "execucao.tag",
         "documentation": {}
     },
@@ -505,7 +522,7 @@
         "kind": 2,
         "importPath": "execucao.utils",
         "description": "execucao.utils",
-        "peekOfCode": "def verificarValor(operando, pc):\n    if isinstance(operando, str):\n            resp = validarNumerico(operando)\n            if resp:\n                return float(operando)\n            numeroRegistrador = pc.obterEnderecoRegistrador(operando)\n            operando = pc.ler(numeroRegistrador)\n            return operando\n    return operando\ndef validarNumerico(valor):",
+        "peekOfCode": "def verificarValor(operando, pc):\n    if isinstance(operando, str):\n            resp = validarNumerico(operando)\n            if resp:\n                return float(operando)\n            operando = operando.strip()\n            if len(operando) != 5:\n                numeroRegistrador = pc.obterEnderecoRegistrador(operando)\n                operando = pc.ler(numeroRegistrador)\n                return operando",
         "detail": "execucao.utils",
         "documentation": {}
     },
@@ -649,7 +666,7 @@
         "kind": 2,
         "importPath": "programas.carregarProgramas",
         "description": "programas.carregarProgramas",
-        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/logaritmo.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
+        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/areaTriangulo.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
         "detail": "programas.carregarProgramas",
         "documentation": {}
     },

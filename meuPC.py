@@ -51,7 +51,7 @@ class PC:
         # print(self.execucao[2].comando,'  ', self.execucao[2].next.comando)
         # print(self.execucao[3].comando,'  ', self.execucao[3].next.comando)
         # print(self.execucao[4].comando,'  ', self.execucao[4].next.comando)
-        # print(self.execucao[5].comando,'  ', self.execucao[5].next.comando)
+        # print(self.execucao[5].comando,'  ', self.execucao[5].operandos)
         # print(self.execucao[6].comando,'  ', self.execucao[6].next.comando)
         # print(self.execucao[7].comando,'  ', self.execucao[7].next[0].comando, ' ', self.execucao[7].next[1].comando)
         # print(self.execucao[8].comando,'  ', self.execucao[8].next.comando)
@@ -66,7 +66,7 @@ class PC:
         
         while atual != ultimoComando :
             atual.processar() 
-            if atual.comando == 'jump' or atual.comando == 'rep':
+            if atual.comando == 'cond' or atual.comando == 'rep':
                 atual.opc.atualizarCondicao()
                 
                 if atual.opc.resultadoOpcLogica == 1.0:
@@ -75,8 +75,8 @@ class PC:
                     atual = atual.next[1]
             else:
                 atual = atual.next
-            # if atual != None:
-            #     print(atual.comando, ' ',self.registradores)
+            if atual != None:
+                print(atual.comando, ' ', atual.operandos,'  ',self.registradores)
         
         print(PC.ALGORITMO[0][0])
         print('-------')
@@ -88,17 +88,19 @@ class PC:
 
 
     def escrever(self, valor, destino):
-        primeiraLetra = destino[0]
+        novaString = destino[0:3]
         
         # Escrita em posição definida pelo usuário na MP
-        if primeiraLetra == 'r':
+        if novaString == 'reg':
             numeroRegistrador = self.obterEnderecoRegistrador(destino)
             self.registradores[numeroRegistrador] = valor
             return numeroRegistrador
-        else: 
+        else:
+            print(destino) 
             endMP = ast.literal_eval(destino)
             linha, coluna = endMP
             self.mp = self.escrita(linha, coluna, self.mp, valor)
+            print(self.mp[linha][coluna], 'linha: ', linha , ' coluna: ', coluna)
             return (linha, coluna)
         # Escrita em um registrador
         

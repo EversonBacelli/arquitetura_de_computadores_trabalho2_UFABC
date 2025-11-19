@@ -1,7 +1,7 @@
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata import IMPL_COMANDOS_INTERNOS
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.utils import verificarValor, validarNumerico
 
-class jump(IMPL_COMANDOS_INTERNOS):
+class cond(IMPL_COMANDOS_INTERNOS):
     def __init__(self, pc, comando, condicao=None, tag_verdade=None, tag_fim=None, tag_falsa=None):
         self.pc = pc
         self.comando = comando
@@ -15,14 +15,7 @@ class jump(IMPL_COMANDOS_INTERNOS):
         self.posicaoFim = 0
         
     def processar(self):
-        # ex = self.pc.execucao
-        condicao = verificarValor(self.condicao, self.pc)
-        
-        if condicao == 0.0:
-            print('Menor')
-           
-        else:
-            print('Maior')
+        print('', end='')
         
     
     def definirPosicoesTags(self):
