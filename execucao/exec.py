@@ -46,12 +46,22 @@ class Exec:
                 ex.next = [self.pc.execucao[posicao + 1], self.pc.execucao[ex.opc.posicaoF]]
                 self.pc.execucao[ex.opc.posicaoV].next = self.pc.execucao[ex.opc.posicaoFim]
                 self.pc.execucao[ex.opc.posicaoF].next = self.pc.execucao[ex.opc.posicaoF + 1]
+                print(self.pc.execucao[ex.opc.posicaoFim].comando)
+                self.pc.execucao[ex.opc.posicaoFim].next = self.pc.execucao[ex.opc.posicaoF + 1]
+                # print(len(self.pc.execucao), ' --------- ')
             elif ex.comando == 'rep':
                 ex.opc.definirPosicoesTags()
-                print("NUMERO: ", ex.opc.posicaoVerdadeira)
-                ex.next = [self.pc.execucao[ex.opc.posicaoVerdadeira], self.pc.execucao[posicao + 1]]
-                self.pc.execucao[ex.opc.posicaoVerdadeira].next = self.pc.execucao[ex.opc.posicaoVerdadeira + 1]
+                # print(ex.opc.tag_verdade,'   posicaoVerdade: ', ex.opc.posicaoVerdadeira)
+                # print(ex.opc.tag_falsa, '  posicaoFalsa: ', ex.opc.posicaoFalsa)
+                ex.next = [self.pc.execucao[ex.opc.posicaoVerdadeira], self.pc.execucao[ex.opc.posicaoFalsa]]
+                # print('NEXT: ', ex.next[0].comando)
+                # print('NEXT: ', ex.next[1].comando)
                 
+                self.pc.execucao[ex.opc.posicaoVerdadeira].next = self.pc.execucao[ex.opc.posicaoVerdadeira + 1]
+                # print(self.pc.execucao[ex.opc.posicaoVerdadeira].next.comando)
+                self.pc.execucao[posicao + 1].next = self.pc.execucao[posicao + 2]
+                # print(self.pc.execucao[posicao + 1].next.comando)
+                # print('--------')
             self = ex
                 
         

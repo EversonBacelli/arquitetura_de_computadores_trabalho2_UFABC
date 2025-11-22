@@ -1,3 +1,6 @@
+TITULO  :   "Calculo do Logaritmo" 
+
+
 EXEC
 es | registrador[0] ; 2.0
 es | registrador[1] ; 0.0

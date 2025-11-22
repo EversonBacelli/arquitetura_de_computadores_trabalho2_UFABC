@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Executar Pacote (Caminho ABSOLUTO)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "arquitetura_de_computadores_trabalho2_UFABC.index",
+            
+            // 🎯 Endereço de Trabalho Explícito
+            // Define o diretório de trabalho (CWD) para C:\Users\INTEL\Desktop
+            "cwd": "C:\\Users\\INTEL\\Desktop", 
+            
+            // 🎯 PYTHONPATH Explícito (Para garantir as importações internas)
+            "env": {
+                // Adiciona o diretório C:\Users\INTEL\Desktop ao PYTHONPATH.
+                "PYTHONPATH": "C:\\Users\\INTEL\\Desktop"
+            },
+            
+            "justMyCode": true,
+            "console": "integratedTerminal"
+        }
+        // ... (mantenha a configuração "Python: Arquivo Atual" ou outras)
+    ]
+}

@@ -25,17 +25,16 @@ class PC:
         
         self.registradores = carregarRegistradores() # registradores
         # SOFTWARE COMO PROGRAMA
-        programa = carregarPrograma()
-        PC.ALGORITMO.append(programa)
+        programas = carregarPrograma()
+        PC.ALGORITMO.append(programas)
         
         # ULA
         self.OPERACOES_ARITMETICAS = operacoesAritmeticas.calc
         self.OPERACOES_LOGICAS = operacoesLogicas.comparar
         self.PILHA_EXECUCAO = []
         
-    def exec(self):
-        
-        alg = preProcessamento(PC.ALGORITMO[0])
+    def exec(self, numeroAlgoritmo):      
+        alg = preProcessamento(PC.ALGORITMO[0][numeroAlgoritmo])
         
         for i in range(len(alg)):
             comando, operandos = alg[i]
@@ -46,39 +45,52 @@ class PC:
         for i in range(len(self.execucao) -1 ):
             self.execucao[i].definirProximo(i)
             
-        # print(self.execucao[0].comando, '  ', self.execucao[0].next.comando )
-        # print(self.execucao[1].comando, '  ', self.execucao[1].next.comando)
-        # print(self.execucao[2].comando,'  ', self.execucao[2].next.comando)
-        # print(self.execucao[3].comando,'  ', self.execucao[3].next.comando)
-        # print(self.execucao[4].comando,'  ')
-        # print(self.execucao[5].comando,'  ', self.execucao[5].operandos)
-        # print(self.execucao[6].comando,'  ', self.execucao[6].next.comando)
-        # print(self.execucao[7].comando,'  ', self.execucao[7].next)
-        # print(self.execucao[8].comando,'  ', self.execucao[8].next.comando)
-        # print(self.execucao[9].comando,'  ', self.execucao[9].next)
-        # print(self.execucao[10].comando,'  ', self.execucao[10].next)
-        
+        print(self.execucao[0].comando, '  ', self.execucao[0].next)
+        print(self.execucao[1].comando, '  ', self.execucao[1].next)
+        print(self.execucao[2].comando,'  ', self.execucao[2].next )
+        print(self.execucao[3].comando,'  ', self.execucao[3].next)
+        print(self.execucao[4].comando,'  ', self.execucao[4].next)
+        print(self.execucao[5].comando,'  ', self.execucao[5].next)
+        print(self.execucao[6].comando,'  ', self.execucao[6].next)
+        print(self.execucao[7].comando,'  ', self.execucao[7].next)
+        print(self.execucao[8].comando,'  ', self.execucao[8].next)
+        print(self.execucao[9].comando,'  ', self.execucao[9].next)
+        print(self.execucao[10].comando,'  ', self.execucao[10].next )
+        print(self.execucao[11].comando,'  ', self.execucao[11].next)
+        print(self.execucao[12].comando,'  ', self.execucao[12].next)
+        print(self.execucao[13].comando,'  ', self.execucao[13].next )
+        print(self.execucao[14].comando,'  ', self.execucao[14].next )
+        print(self.execucao[15].comando,'  ' , self.execucao[15].next)
+        print(self.execucao[16].comando,'  ' , self.execucao[16].next)
+        print(self.execucao[17].comando,'  ', self.execucao[17].next )
+        print(self.execucao[18].comando,'  ' , self.execucao[18].next)
+
+
         # # Condição de parada do process
-        self.execucao.append(None)
+        # self.execucao.append(None)
         
-        atual = self.execucao[0]
-        ultimoComando = self.execucao[-1]
+        # atual = self.execucao[0]
+        # ultimoComando = self.execucao[-1]
         
-        while atual != ultimoComando :
-            atual.processar() 
-            if atual.comando == 'cond' or atual.comando == 'rep':
-                atual.opc.atualizarCondicao()
+        # while atual != ultimoComando :
+        #     if atual != None:
+        #         print(atual.comando, ' ', atual.index)
+        #         # if atual.comando == 'add':
+        #         #     atual.processar()
+        #         # else: 
+        #         atual.processar()
+        #     if atual.comando == 'cond' or atual.comando == 'rep':
+        #         atual.opc.atualizarCondicao()
                 
-                if atual.opc.resultadoOpcLogica == 1.0:
-                    atual = atual.next[0]
-                else: 
-                    atual = atual.next[1]
-            else:
-                atual = atual.next
-            if atual != None:
-                print(atual.comando, ' ', atual.operandos,'  ',self.registradores)
+        #         if atual.opc.resultadoOpcLogica == 1.0:
+        #             atual = atual.next[0]
+        #         else: 
+        #             atual = atual.next[1]
+        #     else:
+        #         atual = atual.next
+            
         
-        print(PC.ALGORITMO[0][0])
+        # print(PC.ALGORITMO[0][0])
         print('-------')
         print('MEMÓRIA PRINCIPAL: ')
         print(self.mp)

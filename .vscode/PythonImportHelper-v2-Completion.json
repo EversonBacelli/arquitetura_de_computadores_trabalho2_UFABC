@@ -666,7 +666,16 @@
         "kind": 2,
         "importPath": "programas.carregarProgramas",
         "description": "programas.carregarProgramas",
-        "peekOfCode": "def carregarPrograma():\n    caminho_relativo = \"arquitetura_de_computadores_trabalho2_UFABC/programas/laco_repeticao.txt\"\n    caminho_absoluto = os.path.abspath(caminho_relativo)\n    # Inicializa a lista que armazenará o conteúdo\n    linhas_do_programa = []\n    # Verifica se o arquivo realmente existe antes de ler\n    if os.path.exists(caminho_absoluto):\n        try:\n            with open(caminho_absoluto, \"r\", encoding=\"utf-8\") as arquivo:\n                # Modificação: Ler cada linha do arquivo",
+        "peekOfCode": "def carregarPrograma():\n    ALGORITMOS = []\n    for programa in programas:\n        caminho_relativo = f\"arquitetura_de_computadores_trabalho2_UFABC/programas/{programa}\"\n        caminho_absoluto = os.path.abspath(caminho_relativo)\n        # Inicializa a lista que armazenará o conteúdo\n        linhas_do_programa = []\n        # Verifica se o arquivo realmente existe antes de ler\n        if os.path.exists(caminho_absoluto):\n            try:",
+        "detail": "programas.carregarProgramas",
+        "documentation": {}
+    },
+    {
+        "label": "programas",
+        "kind": 5,
+        "importPath": "programas.carregarProgramas",
+        "description": "programas.carregarProgramas",
+        "peekOfCode": "programas = [\n                'teste1_leitura_escrita_aritmetica.txt', \n                'teste2_operacoesLogicas.txt',\n                'teste3_saltoCondicional.txt',\n                'teste4_laco_repeticao.txt',\n                'algoritmo_raiz.txt',\n                'algoritmo_logaritmo.txt'\n            ]\ndef carregarPrograma():\n    ALGORITMOS = []",
         "detail": "programas.carregarProgramas",
         "documentation": {}
     },
@@ -675,7 +684,16 @@
         "kind": 2,
         "importPath": "programas.preExec",
         "description": "programas.preExec",
-        "peekOfCode": "def preProcessamento(ALGORITMO):\n    alg = ALGORITMO\n    comandos = []\n    for linha in alg[2:]:\n        if linha.find('|') != -1:\n            comando, operandos = linha.split('|', 1)\n            comando = comando.strip()\n            operandos = operandos.strip()\n            operandos = operandos.split(';')\n            for i in range(len(operandos)):",
+        "peekOfCode": "def preProcessamento(ALGORITMO):\n    alg = ALGORITMO\n    comandos = []\n    # Remover Comentário\n    alg = removerComentarios(alg)   \n    # Separar comandos e operandos\n    for linha in alg[2:]:\n        if linha.find('|') != -1:\n            comando, operandos = linha.split('|', 1)\n            comando = comando.strip()",
+        "detail": "programas.preExec",
+        "documentation": {}
+    },
+    {
+        "label": "removerComentarios",
+        "kind": 2,
+        "importPath": "programas.preExec",
+        "description": "programas.preExec",
+        "peekOfCode": "def removerComentarios(alg):\n    comentarios = []\n    for i in range(len(alg)):\n        padrao = '--'\n        linha = alg[i]\n        if padrao in linha:\n            comentarios.append(i)\n    comentarios = sorted(comentarios, reverse=True)\n    for i in range(len(comentarios)):\n        alg.pop(comentarios[i])",
         "detail": "programas.preExec",
         "documentation": {}
     },
@@ -693,7 +711,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "pc = PC()\n# for i in pc.instrucoes['instrucoes']:\n#     comando = i['comando']\n#     operandos = i['campos_que_exige']\n#     explicacao = i['explicacao']\n#     print(comando, ' - ', operandos, '  - ', explicacao)\npc.exec()\n# for comando, operandos in comandos:\n#     print(comando, ' ', operandos)\n# # print(comandos)",
+        "peekOfCode": "pc = PC()\n##\n#        \"[0] - Teste Leitura, Escrita e Operações Aritméticas \"\n#        \"[1] - Teste Operações Lógicas\"\n#        \"[2] - Teste de Salto Condicional\"\n#        \"[3] - Teste de Laço de Repetição\"\n#        \"[4] - Raiz\"\n#        \"[5] - Logaritmo \"\npc.exec(2)\n# for comando, operandos in comandos:",
         "detail": "index",
         "documentation": {}
     },

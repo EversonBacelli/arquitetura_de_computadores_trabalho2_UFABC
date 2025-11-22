@@ -1,9 +1,0 @@
-TITULO  :   "operacao logica" 
-EXEC
-es | registrador[1] ; 6 
-es | registrador[2] ; 3
-mq | registrado[3]; registrador[1] ; registrador[2]
-meq | registrador[4] ; registrador[1] ; registrador[2]
-eq  | registrador[5] ; registrador[1] ; registrador[2]
-es | (6,4) ;  registrador[3]
-

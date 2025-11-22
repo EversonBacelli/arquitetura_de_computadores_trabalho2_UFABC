@@ -1,0 +1,38 @@
+TITULO  :   "operacao logica" 
+EXEC
+es | registrador[0] ; 6.0 
+es | registrador[1] ; 3.0
+
+-- Teste das operações lógicas   maior que [mq], menor que [meq], igual a [eq]
+mq | registrado[2]; registrador[1] ; registrador[0]
+mq | registrador[3] ; 5.0 ; registrador[1]
+meq | registrador[4] ; registrador[1] ; 8.0
+meq | registrador[5] ; registrador[1] ; 1.0
+eq  | registrador[6] ; registrador[1] ; 10.0
+eq  | registrador[7] ; 6.0 ; registrador[0]
+-- Gravar resultados
+es | (0,0) ;  registrador[0]
+es | (0,7) ;  registrador[1]
+es | (7,7) ;  registrador[2]
+es | (7,0) ;  registrador[3]
+es | (5,5) ;  registrador[4]
+es | (4,4) ;  registrador[5]
+es | (3,3) ;  registrador[6]
+es | (2,2) ;  registrador[7]
+
+-- Resultado Esperado dos registradores
+--      registrador[0] = 6.0
+--      registrador[1] = 3.0
+--      registrador[2] = 0.0
+--      registrador[3] = 1.0
+--      registrador[4] = 1.0
+--      registrador[5] = 0.0
+--      registrador[6] = 0.0
+--      registrador[7] = 7.0
+
+-- Resultado Esperado na MP
+--      (0,0) = 6.0 ; (0.7) = 3.0 ; (7.7) = 0.0 ; (7,0) = 1.0
+--      (5,5) = 1.0 ; (4,4) = 0.0 ; (3,3) = 0.0 ; (2,2) = 7.0
+
+--   Avaliação: Funcionando conforme o planejado
+   
