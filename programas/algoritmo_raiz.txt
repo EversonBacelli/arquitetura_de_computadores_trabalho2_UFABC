@@ -1,13 +1,29 @@
 TITULO  :   "Calculo de Raiz" 
-
+-- Orientações Gerais
+--  Não há registradores Fixos
+    --  Algumas linhas da MP possuem significado especial neste algoritmo:  
+    --  3   -   a posição [0] se refere a limite inferior ; a posição [1] limite superior
+    --  4   -   resultados relevantes do calculo são postas nesta posição
+        -- [0] - chute obtido com a técnica Bisseção
+        -- [1] - 1° Termo:  1 / n
+        -- [2] - 2° Termo:  (n-1) * chute
+        -- [3] - 3° Termo:   a / chute^(n-1)
+        -- [4] - 4° Resultado: novo chute
+        -- [5] - 5° Chute aplicado
+    --  6   - Resultado Final:   [0] - valor que resolve a raiz
+    --  7   -   [0] radicando,  [1] indice
 EXEC
+-- VALORES DE ENTRADA
 -- radicando
-es | registrador[0] ; 130.0
+es | registrador[0] ; 150.0
 es | (7,0) ; registrador[0]
 -- indice
 es | registrador[1] ; 3
 es | (7,1) ; registrador[1]
-es | registrador[2] ; 0
+es | registrador[2] ; 0.0
+-- Numero de Iterações
+es | (7,2) ; 5.0
+
 
 -- Buscar o valor mais próximo ou exato
 LOOP1
@@ -25,17 +41,19 @@ LOOP1
         rep | registrador[5] ; LOOP2 ; END_LOOP2
     END_LOOP2
     meq | registrado[5] ; registrador[4] ; registrador[0]
-    rep | registrador[5] ; LOOP1 ; END_LOOP1
+rep | registrador[5] ; LOOP1 ; END_LOOP1
 END_LOOP1
+
+
 eq | registrador[5] ; registrador[4] ; registrador[0]
 cond | registrador[5] ; DESVIO_1; FIM_1; ELSE_1
     es | (0,0) ; registrador[4]
     -- indice
-    es | (0,1) ; registrador[2]
+    es | (6,0) ; registrador[2]
     -- expoente
-    es | (0,2) ; registrador[3]
+    es | (6,1) ; registrador[3]
+    ----------- Fim, caso o valor dê exato -------
 DESVIO_1
--- se o valor não for exato
 ELSE_1
     -- controlador de iteração
     es | (5,5) ; 0.0
@@ -43,89 +61,107 @@ ELSE_1
     -- resultante
     es | (0,0) ; registrador[4]
     -- base
-    es | (0,1) ; registrador[2]
-    -- expoente
-    es | (0,2) ; registrador[3]
+    es | (3,0) ; registrador[2]
     ---------------------- 
     -- expoente anterior
     sub | registrador[5] ; registrador[2] ; 1.0
-    es | (0,3) ; registrador[5]
+    es | (3,1) ; registrador[5]
 
-    -- Calculo da Bisseção
-    -- quardado na linha 2
-    add | registrador[6] ; registrador[2] ; registrador[5]
-    div | registrador[6] ; registrador[6] ; 2.0
-    es | (4,0) ; registrador[6]
-    -- Newton Raphson: 1/n * [(n-1)*chute + (a / chute^(n-1))] 
-        -- n = indice
-        -- chute = valor a testar
-        -- a = radicando (alvo)
+    -- INICIO LOOP ALGORITMO DE APROXIMAÇÃO
+        -- Calculo da Bisseção
+        -- quardado na linha 2
+        es | registrador[7] ; (5,5)
+        
+        add | registrador[6] ; registrador[2] ; registrador[5]
+        div | registrador[6] ; registrador[6] ; 2.0
+        es  | (4,0) ; registrador[6]
+        
+            
+        -- Newton Raphson: 1/n * [(n-1)*chute + (a / chute^(n-1))] 
+            -- n = indice
+            -- chute = valor a testar
+            -- a = radicando (alvo)
+        
+        LOOP4    
+            -- 1° Termo   1 / n,  de modo que n é o indice da raiz
+            div | registrador[4] ; 1 ; registrador[1]
+                -- guardado 
+                es  | (4,1) ; registrador[4]
+
+            -- 2° Termo:  n - 1 * chute
+                -- n - 1: registrador[1] - 1
+                -- chute: registrador[6]
+            
+            -- n - 1 =  registrador[7]
+            -- chute = registrador[6]
+            es | registrador[6] ; (4,0)
+            sub | registrador[7] ; registrador[1] ; 1.0 
+            mul | registrador[4] ; registrador[7] ; registrador[6]
+                -- guardado
+                es  | (4,2) ; registrador[4]
+
+            -- 3° Termo:
+                    --  a  / chute ^ n - 1  
+                        --  a   - registrador[0]
+                        --  chute - registrador[6]
+
+            -- construindo (chute ^ n - 1) 
+            es | registrador[3] ; 1.0
+            es | registrador[5] ; registrador[7]
+            
+            LOOP3
+                mul | registrador[3] ; registrador[3] ; registrador[6]
+                --  Número de Iterações
+                sub | registrador[5] ; registrador[5] ; 1.0
+                meq | registrado[2] ;  0.0 ; registrador[5]
+            rep | registrador[2] ; LOOP3 ; END_LOOP3
+            END_LOOP3
+            es | registrador[7] ; registrador[3]
+            div | registrador[4] ; registrador[0] ; registrador[3] 
+            es | (4,3) ; registrador[4]
+            
+            -- RESUMINDO
+                -- 1° Termo: (4,1)  |   3    
+                -- 2° Termo: (4,2)  |   4    
+                -- 3° Termo: (4,3)  |   5
+            -- Recuperando os termos
+            es | registrador[3] ; (4,1)
+            es | registrador[4] ; (4,2)
+            es | registrador[5] ; (4,3)
+
+            -- Realizando o calculo
+            add | registrador[4] ; registrador[4] ; registrador[5]
+            mul | registrador[3] ; registrador[3] ; registrador[4]
+            -- ------
+            es | (4,0) ; registrador[3] 
+
+            -- Controlador do laço
+            es | registrador[6] ; (5,5)
+            add | registrador[6] ; registrador[6] ; 1.0
+            es | (5,5) ; registrador[6]
+            es | registrador[7] ; (7,2)
+            meq | registrador[7] ; registrador[6] ; registrador[7] 
+            
+        rep | registrador[7] ; LOOP4; END_LOOP4
+        END_LOOP4
+
+
+
+        -- Depois das Iterações
+        -- Elevar a base obtida
+            es | registrador[7] ; 1.0
+            es | registrador[4] ; registrador[1]
+        LOOP5
+            sub | registrador[4] ; registrador[4] ; 1.0
+            mul | registrador[7] ; registrador[7] ; registrador[3]
+            --  Número de Iterações
+            meq | registrado[2] ;  0.0 ; registrador[4]
+        rep | registrador[2] ; LOOP5 ; END_LOOP5
+        END_LOOP5
     
-    -- 1° Termo   1 / n,  de modo que n é o indice da raiz
-    div | registrador[4] ; 1 ; registrador[1]
-        -- guardado 
-        es  | (4,1) ; registrador[4]
-
-    -- 2° Termo:  n - 1 * chute
-        -- n - 1: registrador[1] - 1
-        -- chute: registrador[6]
-    
-    -- n - 1 =  registrador[7]
-    -- chute = registrador[6]
-    sub | registrador[7] ; registrador[1] ; 1.0 
-    mul | registrador[4] ; registrador[7] ; registrador[6]
-        -- guardado
-        es  | (4,2) ; registrador[4]
-
-    -- 3° Termo:
-            --  a  / chute ^ n - 1  
-                --  a   - registrador[0]
-                --  chute - registrador[6]
-    
-    -- Registradores que posso usar nesse ponto
-        --2, 3, 4, 5
-
-    -- construindo (chute ^ n - 1) 
-    es | registrador[3] ; 1.0
-    es | registrador[5] ; registrador[7]
-    -- es | (7,7) ; registrador[5]
-    LOOP3
-        mul | registrador[3] ; registrador[3] ; registrador[6]
-        --  Número de Iterações
-        sub | registrador[5] ; registrador[5] ; 1.0
-        meq | registrado[2] ;  0.0 ; registrador[5]
-        rep | registrador[2] ; LOOP3 ; END_LOOP3
-    END_LOOP3
-    es | registrador[7] ; registrador[3]
-    div | registrador[4] ; registrador[0] ; registrador[3] 
-    es | (4,3) ; registrador[4]
-    -- RESUMINDO
-        -- 1° Termo: (4,1)  |   3
-        -- 2° Termo: (4,2)  |   4
-        -- 3° Termo: (4,3)  |   5
-
-    es | registrador[3] ; (4,1)
-    es | registrador[4] ; (4,2)
-    es | registrador[5] ; (4,3)
-
-    -- Calculo 
-    add | registrador[4] ; registrador[4] ; registrador[5]
-    mul | registrador[3] ; registrador[3] ; registrador[4]
-        -- RESULTADO
-        es | (7,7) ; registrador[3]
-    -- Fim do Calculo
-    es | registrador[4] ; (5,5)
-    eq | registrador[5] ; registrador[5] ; 0.0
-    
+        es | (6,0) ; registrador[3]
+        es | (6,1) ; registrador[7]
+        
 FIM_1
 
--- DISTRIBUIÇÃO DOS TERMOS NA MP
-        -- CHUTE: (4,0)
-        -- 1° TERMO: (4,1)
-        -- 2° TERMO: (4,2)
-        -- 3° Termo: (4,3)
-        -- # RADICANDO: (7,0)
-        -- # INDICE: (7,1)
-        -- # BASE: (0,1) - 'Valor elevado que passou do radicando'
-        -- # BASE ANTERIOR (0,3) - 'Valor da base anterior' 
 

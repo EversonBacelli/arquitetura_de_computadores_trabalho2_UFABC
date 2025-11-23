@@ -13,8 +13,7 @@ cond | registrador[3] ; DESVIO ; FIM ; ELSE
     ELSE_2
         es | registrador[7] ; 30.0
     FIM_2
-    es | (6,4) ;  registrador[6]
-    
+    es | (6,4) ;  registrador[7]
 DESVIO 
 ELSE 
     mul | registrador[7]; 10.0 ; 5.0

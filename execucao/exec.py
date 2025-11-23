@@ -46,8 +46,10 @@ class Exec:
                 ex.next = [self.pc.execucao[posicao + 1], self.pc.execucao[ex.opc.posicaoF]]
                 self.pc.execucao[ex.opc.posicaoV].next = self.pc.execucao[ex.opc.posicaoFim]
                 self.pc.execucao[ex.opc.posicaoF].next = self.pc.execucao[ex.opc.posicaoF + 1]
-                print(self.pc.execucao[ex.opc.posicaoFim].comando)
-                self.pc.execucao[ex.opc.posicaoFim].next = self.pc.execucao[ex.opc.posicaoF + 1]
+                # print(self.pc.execucao[ex.opc.posicaoFim].comando)
+                
+                if ex.opc.posicaoFim + 1 < len(self.pc.execucao):
+                    self.pc.execucao[ex.opc.posicaoFim].next = self.pc.execucao[ex.opc.posicaoFim + 1]
                 # print(len(self.pc.execucao), ' --------- ')
             elif ex.comando == 'rep':
                 ex.opc.definirPosicoesTags()

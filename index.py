@@ -11,7 +11,7 @@ pc = PC()
 #        "[4] - Raiz"
 #        "[5] - Logaritmo "
 
-pc.exec(2)
+pc.exec(4)
 
 # for comando, operandos in comandos:
 #     print(comando, ' ', operandos)

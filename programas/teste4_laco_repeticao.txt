@@ -9,7 +9,9 @@ LOOP1
     meq | registrado[6] ;  0.0 ; registrador[2]
     rep | registrador[6] ; LOOP1 ; END_LOOP1
 END_LOOP1
+
 es | (6,5) ;  registrador[4]
+mul | registrador[2] ;  registrador[2] ; -1.0
 
 -- Resultado Esperado nos registradores
         --      registrador[1] = 2.0     |  base

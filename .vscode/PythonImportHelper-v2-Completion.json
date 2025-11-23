@@ -549,7 +549,7 @@
         "kind": 2,
         "importPath": "memoriaPrincipal.mp",
         "description": "memoriaPrincipal.mp",
-        "peekOfCode": "def carregarMemoriaPrincipal():\n    mp = np.full((8, 8), np.nan, dtype=float)\n    return mp\ndef selecionarPosicaoMP(mp):\n    for i in range(len(mp)):\n        for j in range(len(mp[0])):\n            if np.isnan(mp[i][j]):\n                return i, j\n    # 2. Obtenha as dimensões (shape)\n    num_linhas, num_colunas = mp.shape",
+        "peekOfCode": "def carregarMemoriaPrincipal():\n    np.set_printoptions(precision=4, suppress=True)\n    mp = np.zeros((8, 8), dtype=float)\n    return mp\ndef selecionarPosicaoMP(mp):\n    for i in range(len(mp)):\n        for j in range(len(mp[0])):\n            if np.isnan(mp[i][j]):\n                return i, j\n    # 2. Obtenha as dimensões (shape)",
         "detail": "memoriaPrincipal.mp",
         "documentation": {}
     },
@@ -702,7 +702,7 @@
         "kind": 2,
         "importPath": "registradores.rg",
         "description": "registradores.rg",
-        "peekOfCode": "def carregarRegistradores():\n    registradores = np.full((8), np.nan, dtype=float)\n    return registradores",
+        "peekOfCode": "def carregarRegistradores():\n    np.set_printoptions(precision=4, suppress=True)\n    registradores = np.zeros((8), dtype=float)\n    return registradores",
         "detail": "registradores.rg",
         "documentation": {}
     },
@@ -711,7 +711,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "pc = PC()\n##\n#        \"[0] - Teste Leitura, Escrita e Operações Aritméticas \"\n#        \"[1] - Teste Operações Lógicas\"\n#        \"[2] - Teste de Salto Condicional\"\n#        \"[3] - Teste de Laço de Repetição\"\n#        \"[4] - Raiz\"\n#        \"[5] - Logaritmo \"\npc.exec(2)\n# for comando, operandos in comandos:",
+        "peekOfCode": "pc = PC()\n##\n#        \"[0] - Teste Leitura, Escrita e Operações Aritméticas \"\n#        \"[1] - Teste Operações Lógicas\"\n#        \"[2] - Teste de Salto Condicional\"\n#        \"[3] - Teste de Laço de Repetição\"\n#        \"[4] - Raiz\"\n#        \"[5] - Logaritmo \"\npc.exec(4)\n# for comando, operandos in comandos:",
         "detail": "index",
         "documentation": {}
     },

@@ -41,58 +41,54 @@ class PC:
             e = Exec(comando, operandos, self, i)
             self.execucao.append(e)
         
+       
+        
         # Vincular Nós, 
         for i in range(len(self.execucao) -1 ):
             self.execucao[i].definirProximo(i)
-            
-        print(self.execucao[0].comando, '  ', self.execucao[0].next)
-        print(self.execucao[1].comando, '  ', self.execucao[1].next)
-        print(self.execucao[2].comando,'  ', self.execucao[2].next )
-        print(self.execucao[3].comando,'  ', self.execucao[3].next)
-        print(self.execucao[4].comando,'  ', self.execucao[4].next)
-        print(self.execucao[5].comando,'  ', self.execucao[5].next)
-        print(self.execucao[6].comando,'  ', self.execucao[6].next)
-        print(self.execucao[7].comando,'  ', self.execucao[7].next)
-        print(self.execucao[8].comando,'  ', self.execucao[8].next)
-        print(self.execucao[9].comando,'  ', self.execucao[9].next)
-        print(self.execucao[10].comando,'  ', self.execucao[10].next )
-        print(self.execucao[11].comando,'  ', self.execucao[11].next)
-        print(self.execucao[12].comando,'  ', self.execucao[12].next)
-        print(self.execucao[13].comando,'  ', self.execucao[13].next )
-        print(self.execucao[14].comando,'  ', self.execucao[14].next )
-        print(self.execucao[15].comando,'  ' , self.execucao[15].next)
-        print(self.execucao[16].comando,'  ' , self.execucao[16].next)
-        print(self.execucao[17].comando,'  ', self.execucao[17].next )
-        print(self.execucao[18].comando,'  ' , self.execucao[18].next)
-
-
-        # # Condição de parada do process
-        # self.execucao.append(None)
         
-        # atual = self.execucao[0]
-        # ultimoComando = self.execucao[-1]
+        # Condição de parada do process
+        self.execucao.append(None)
         
-        # while atual != ultimoComando :
-        #     if atual != None:
-        #         print(atual.comando, ' ', atual.index)
-        #         # if atual.comando == 'add':
-        #         #     atual.processar()
-        #         # else: 
-        #         atual.processar()
-        #     if atual.comando == 'cond' or atual.comando == 'rep':
-        #         atual.opc.atualizarCondicao()
+        # print(len(self.execucao))
+        # for exe in self.execucao:
+        #     if exe is not None:
+        #         if exe.comando == 'cond' or exe.comando == 'rep':
+        #             print(exe.comando, '  ', exe.next[0].comando, '  ', exe.next[1].comando)
+        #         else:
+        #             if exe.next is not None:
+        #                 print(exe.comando, '  ', exe.next.comando)
+        #             else:
+        #                 print(exe.comando, '  ', exe.next)
+
+        atual = self.execucao[0]
+        ultimoComando = self.execucao[-1]
+        
+        while atual != ultimoComando :
+            # if atual != None:
+            #     print(atual.comando, ' ', atual.index)
+                # if atual.comando == 'add':
+                #     atual.processar()
+                # else: 
+            atual.processar()
+            if atual.comando == 'cond' or atual.comando == 'rep':
+                atual.opc.atualizarCondicao()
                 
-        #         if atual.opc.resultadoOpcLogica == 1.0:
-        #             atual = atual.next[0]
-        #         else: 
-        #             atual = atual.next[1]
-        #     else:
-        #         atual = atual.next
+                if atual.opc.resultadoOpcLogica == 1.0:
+                    atual = atual.next[0]
+                else: 
+                    atual = atual.next[1]
+            else:
+                atual = atual.next
             
         
         # print(PC.ALGORITMO[0][0])
         print('-------')
         print('MEMÓRIA PRINCIPAL: ')
+        # for linha in self.mp:
+        #     for celula in linha:
+        #         print(f'{celula:.2f} ', end=' ')
+        #     print()
         print(self.mp)
         print('---------')
         print('REGISTRADORES: ')
