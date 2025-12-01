@@ -11,12 +11,13 @@ from arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcAritmeticas im
 from arquitetura_de_computadores_trabalho2_UFABC.operacoes_ula.opcLogicas import operacoesLogicas
 from arquitetura_de_computadores_trabalho2_UFABC.programas.preExec import preProcessamento
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.exec import Exec
+from pip._vendor.urllib3.packages.six import exec_
 
 class PC:
     ALGORITMO = []
     def __init__(self):
         self.execucao = []
-        
+        self.exec_func = []
         # RECURSOS DE MEMORIA
         self.mp = carregarMemoriaPrincipal()         # memória principal
         self.definirPosicaoMP = selecionarPosicaoMP
@@ -34,33 +35,53 @@ class PC:
         self.PILHA_EXECUCAO = []
         
     def exec(self, numeroAlgoritmo):      
-        alg = preProcessamento(PC.ALGORITMO[0][numeroAlgoritmo])
+        alg, func = preProcessamento(PC.ALGORITMO[0][numeroAlgoritmo])
+         
         
+        # Converter comandos em operações executáveis       
         for i in range(len(alg)):
             comando, operandos = alg[i]
             e = Exec(comando, operandos, self, i)
             self.execucao.append(e)
+        # # Condição de parada do process
+        self.execucao.append(None)
         
-       
+        for i in range(len(func)):
+            if isinstance(func[i], str):
+                link = func[i]
+                e = Exec(link, None, self, i)
+                self.exec_func.append(e)
+            else:
+                comando, operandos = func[i]
+                e = Exec(comando, operandos, self, i)
+                self.exec_func.append(e)
+         
         
         # Vincular Nós, 
         for i in range(len(self.execucao) -1 ):
-            self.execucao[i].definirProximo(i)
+            self.execucao[i].definirProximo(i, 'main')
         
-        # Condição de parada do process
-        self.execucao.append(None)
+        for i in range(len(self.exec_func) -1 ):
+            # print(self.exec_func[i])
+            self.exec_func[i].definirProximo(i, 'func')
         
-        # print(len(self.execucao))
+        
+        
+        # # print(len(self.execucao))
         # for exe in self.execucao:
         #     if exe is not None:
         #         if exe.comando == 'cond' or exe.comando == 'rep':
         #             print(exe.comando, '  ', exe.next[0].comando, '  ', exe.next[1].comando)
+        #         elif exe.comando == 'jump':
+        #             print(exe.comando, '  ', exe.next.comando)
         #         else:
         #             if exe.next is not None:
         #                 print(exe.comando, '  ', exe.next.comando)
         #             else:
         #                 print(exe.comando, '  ', exe.next)
 
+        
+        
         atual = self.execucao[0]
         ultimoComando = self.execucao[-1]
         

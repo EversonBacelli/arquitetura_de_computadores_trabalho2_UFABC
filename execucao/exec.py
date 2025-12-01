@@ -6,11 +6,12 @@ from arquitetura_de_computadores_trabalho2_UFABC.execucao.opcLeitura import opcL
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.cond import cond
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.tag import tag
 from arquitetura_de_computadores_trabalho2_UFABC.execucao.rep import rep
+from arquitetura_de_computadores_trabalho2_UFABC.execucao.jump import jump
 
 
 # Padrão de Projeto Strategy
 class Exec:
-        def __init__(self, comando, operandos, pc, index):
+        def __init__(self, comando, operandos=None, pc=None, index=None):
             self.pc = pc
             self. comando = comando
             self.operandos = operandos
@@ -18,55 +19,56 @@ class Exec:
             self.opc = None
             self.next = None
             # Operações do Sistema
+            
             if comando in ['add', 'sub', 'mul', 'div']:
                 self.opc = opcAritmetica(pc, comando, *operandos)
             elif comando in ['mq', 'meq', 'eq']:
                 self.opc = opcLogica(pc, comando, *operandos)
             elif comando == 'es':
                 self.opc = opcEscrita(pc, comando, *operandos)
-            elif comando == 'le':
-                self.opc = opcLeitura(pc, comando, *operandos)
+            
             elif comando == 'cond':
                 self.opc = cond(pc, comando, *operandos)
             elif comando == 'rep':
                 self.opc = rep(pc, comando, *operandos)
+            elif comando == 'jump':
+                self.opc = jump(pc, comando, *operandos)
             else:
                 self.opc = tag(comando)
 
         def processar(self):
             self.opc.processar()
         
-        def definirProximo(self, posicao):
+        def definirProximo(self, posicao, escopo):
             ex = self
-           
-            if ex.comando not in ['cond', 'rep'] and ex.comando not in tag.LISTA_DE_TAGS:
-                ex.next = self.pc.execucao[posicao + 1]
+            
+            if ex.comando not in ['cond', 'rep', 'jump'] and ex.comando not in tag.LISTA_DE_TAGS:
+                if escopo == 'main':
+                    ex.next = self.pc.execucao[posicao + 1]
+                else:
+                    ex.next = self.pc.exec_func[posicao + 1]
             elif ex.comando == 'cond':
                 ex.opc.definirPosicoesTags() 
                 ex.next = [self.pc.execucao[posicao + 1], self.pc.execucao[ex.opc.posicaoF]]
                 self.pc.execucao[ex.opc.posicaoV].next = self.pc.execucao[ex.opc.posicaoFim]
                 self.pc.execucao[ex.opc.posicaoF].next = self.pc.execucao[ex.opc.posicaoF + 1]
-                # print(self.pc.execucao[ex.opc.posicaoFim].comando)
-                
                 if ex.opc.posicaoFim + 1 < len(self.pc.execucao):
                     self.pc.execucao[ex.opc.posicaoFim].next = self.pc.execucao[ex.opc.posicaoFim + 1]
-                # print(len(self.pc.execucao), ' --------- ')
+               
             elif ex.comando == 'rep':
                 ex.opc.definirPosicoesTags()
-                # print(ex.opc.tag_verdade,'   posicaoVerdade: ', ex.opc.posicaoVerdadeira)
-                # print(ex.opc.tag_falsa, '  posicaoFalsa: ', ex.opc.posicaoFalsa)
                 ex.next = [self.pc.execucao[ex.opc.posicaoVerdadeira], self.pc.execucao[ex.opc.posicaoFalsa]]
-                # print('NEXT: ', ex.next[0].comando)
-                # print('NEXT: ', ex.next[1].comando)
-                
                 self.pc.execucao[ex.opc.posicaoVerdadeira].next = self.pc.execucao[ex.opc.posicaoVerdadeira + 1]
-                # print(self.pc.execucao[ex.opc.posicaoVerdadeira].next.comando)
                 self.pc.execucao[posicao + 1].next = self.pc.execucao[posicao + 2]
-                # print(self.pc.execucao[posicao + 1].next.comando)
-                # print('--------')
-            self = ex
-                
-        
+               
+            elif ex.comando == 'jump':
+                ex.opc.definirPosicoesTags()
+                # print('-----')
+                # print(ex.comando, ' --- ', ex.opc.tag_link, ' ', ex.opc.tag_retorno)
+                # print(ex.opc.link, ' ', ex.opc.retorno)
+                ex.next = self.pc.exec_func[ex.opc.link]
+                self.pc.exec_func[ex.opc.link].next = self.pc.exec_func[ex.opc.link + 1]
+                self.pc.exec_func[ex.opc.retorno].next = self.pc.execucao[posicao + 1]
 
 
 

@@ -64,6 +64,30 @@
         "documentation": {}
     },
     {
+        "label": "IMPL_COMANDOS_INTERNOS",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.opcAbstrata",
+        "documentation": {}
+    },
+    {
+        "label": "verificarValor",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
+        "label": "validarNumerico",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
+        "documentation": {}
+    },
+    {
         "label": "verificarValor",
         "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
         "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.utils",
@@ -213,6 +237,14 @@
         "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.rep",
         "isExtraImport": true,
         "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.rep",
+        "documentation": {}
+    },
+    {
+        "label": "jump",
+        "importPath": "arquitetura_de_computadores_trabalho2_UFABC.execucao.jump",
+        "description": "arquitetura_de_computadores_trabalho2_UFABC.execucao.jump",
+        "isExtraImport": true,
+        "detail": "arquitetura_de_computadores_trabalho2_UFABC.execucao.jump",
         "documentation": {}
     },
     {
@@ -437,6 +469,14 @@
         "documentation": {}
     },
     {
+        "label": "exec_",
+        "importPath": "pip._vendor.urllib3.packages.six",
+        "description": "pip._vendor.urllib3.packages.six",
+        "isExtraImport": true,
+        "detail": "pip._vendor.urllib3.packages.six",
+        "documentation": {}
+    },
+    {
         "label": "cond",
         "kind": 6,
         "importPath": "execucao.cond",
@@ -450,8 +490,17 @@
         "kind": 6,
         "importPath": "execucao.exec",
         "description": "execucao.exec",
-        "peekOfCode": "class Exec:\n        def __init__(self, comando, operandos, pc, index):\n            self.pc = pc\n            self. comando = comando\n            self.operandos = operandos\n            self.index = index\n            self.opc = None\n            self.next = None\n            # Operações do Sistema\n            if comando in ['add', 'sub', 'mul', 'div']:",
+        "peekOfCode": "class Exec:\n        def __init__(self, comando, operandos=None, pc=None, index=None):\n            self.pc = pc\n            self. comando = comando\n            self.operandos = operandos\n            self.index = index\n            self.opc = None\n            self.next = None\n            # Operações do Sistema\n            if comando in ['add', 'sub', 'mul', 'div']:",
         "detail": "execucao.exec",
+        "documentation": {}
+    },
+    {
+        "label": "jump",
+        "kind": 6,
+        "importPath": "execucao.jump",
+        "description": "execucao.jump",
+        "peekOfCode": "class jump(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, tag_link=None, tag_retorno=None):\n        self.pc = pc\n        self.comando = comando\n        self.tag_link= tag_link\n        self.tag_retorno = tag_retorno\n        self.link = None\n        self.retorno = None\n        self.next = None\n        print(self.tag_link, '-----', self.tag_retorno)",
+        "detail": "execucao.jump",
         "documentation": {}
     },
     {
@@ -684,7 +733,7 @@
         "kind": 2,
         "importPath": "programas.preExec",
         "description": "programas.preExec",
-        "peekOfCode": "def preProcessamento(ALGORITMO):\n    alg = ALGORITMO\n    comandos = []\n    # Remover Comentário\n    alg = removerComentarios(alg)   \n    # Separar comandos e operandos\n    for linha in alg[2:]:\n        if linha.find('|') != -1:\n            comando, operandos = linha.split('|', 1)\n            comando = comando.strip()",
+        "peekOfCode": "def preProcessamento(ALGORITMO):\n    alg = ALGORITMO\n    comandos = []\n    comandos_func = []\n    # Remover Comentário\n    alg = removerComentarios(alg)   \n    alg, func = removerFuncoes(alg)\n    # Separar comandos e operandos\n    for linha in alg[2:]:\n        if linha.find('|') != -1:",
         "detail": "programas.preExec",
         "documentation": {}
     },
@@ -694,6 +743,15 @@
         "importPath": "programas.preExec",
         "description": "programas.preExec",
         "peekOfCode": "def removerComentarios(alg):\n    comentarios = []\n    for i in range(len(alg)):\n        padrao = '--'\n        linha = alg[i]\n        if padrao in linha:\n            comentarios.append(i)\n    comentarios = sorted(comentarios, reverse=True)\n    for i in range(len(comentarios)):\n        alg.pop(comentarios[i])",
+        "detail": "programas.preExec",
+        "documentation": {}
+    },
+    {
+        "label": "removerFuncoes",
+        "kind": 2,
+        "importPath": "programas.preExec",
+        "description": "programas.preExec",
+        "peekOfCode": "def removerFuncoes(alg):\n    # trechoFuncao = []\n    inicioFunc = None\n    for i in range(len(alg)):\n        padrao = '***'\n        linha = alg[i]\n        if padrao in linha:\n            inicioFunc = i\n    novoAlg = alg[:inicioFunc]\n    func = alg[inicioFunc:]",
         "detail": "programas.preExec",
         "documentation": {}
     },
@@ -711,7 +769,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "pc = PC()\n##\n#        \"[0] - Teste Leitura, Escrita e Operações Aritméticas \"\n#        \"[1] - Teste Operações Lógicas\"\n#        \"[2] - Teste de Salto Condicional\"\n#        \"[3] - Teste de Laço de Repetição\"\n#        \"[4] - Raiz\"\n#        \"[5] - Logaritmo \"\npc.exec(5)\n# for comando, operandos in comandos:",
+        "peekOfCode": "pc = PC()\n##\n#        \"[0] - Teste Leitura, Escrita e Operações Aritméticas \"\n#        \"[1] - Teste Operações Lógicas\"\n#        \"[2] - Teste de Salto Condicional\"\n#        \"[3] - Teste de Laço de Repetição\"\n#        \"[4] - Raiz\"\n#        \"[5] - Logaritmo \"\npc.exec(0)\n# for comando, operandos in comandos:",
         "detail": "index",
         "documentation": {}
     },
@@ -720,7 +778,7 @@
         "kind": 6,
         "importPath": "meuPC",
         "description": "meuPC",
-        "peekOfCode": "class PC:\n    ALGORITMO = []\n    def __init__(self):\n        self.execucao = []\n        # RECURSOS DE MEMORIA\n        self.mp = carregarMemoriaPrincipal()         # memória principal\n        self.definirPosicaoMP = selecionarPosicaoMP\n        self.leitura = lerEmMP\n        self.escrita = escreverEmMP\n        self.registradores = carregarRegistradores() # registradores",
+        "peekOfCode": "class PC:\n    ALGORITMO = []\n    def __init__(self):\n        self.execucao = []\n        self.exec_func = []\n        # RECURSOS DE MEMORIA\n        self.mp = carregarMemoriaPrincipal()         # memória principal\n        self.definirPosicaoMP = selecionarPosicaoMP\n        self.leitura = lerEmMP\n        self.escrita = escreverEmMP",
         "detail": "meuPC",
         "documentation": {}
     }

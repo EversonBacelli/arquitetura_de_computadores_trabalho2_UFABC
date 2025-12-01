@@ -13,31 +13,39 @@ sub | registrador[4] ; 4.0 ; registrador[1]
 mul | registrado[5] ; 5.0 ; 5.0
 div | registrador[6] ; registrador[0] ; 2.0
 --
+jump | link ; retorno_link
 es  | (0,0) ; registrador[0]
 es  | (0,1) ; registrador[1]
 es  | (2,4) ; registrador[2]
 es  | (2,5) ; registrador[3]
 es  | (3,3) ; registrador[4]
 es  | (3,4) ; registrador[5]
-es  | (7,4) ; registrador[6]
+jump | link2 ; retorno_link2
+jump | link3 ; retorno_link3
 
--- Saída esperada registradores: 
---          registrador[0] = 10.0
---          registrador[1] = 10.0
---          registrador[2] = 10.0
---          registrador[3] = 15.0
---          registrador[4] = -6.0
---          registrador[5] = 25.0
---          registrador[6] = 5.0
+***
+link
+    mul | registrador[5] ; 5.0 ; 5.0
+    es  | (3,4) ; registrador[5]
+    es  | (7,4) ; registrador[6]
+    es  | (7,7) ; registrador[6]
+retorno_link
 
--- Saída Esperadao MP
---   (0,0) = 10.0 ; (0,1) = 10.0 ; (2,4) = 10.0 ; (2,5) = 15.0
---   (3,3) = -6.0 ; (3,4) = 25.0 ; (7,4) = 5.0
+link2
+    mul | registrador[5] ; 5.0 ; 1.0
+    es  | registrador[0] ; 2.0
+    add | registrador[4] ; registrador[5]; registrador[0]
+    div | registrador[3] ; registrador[5] ; registrador[0]
+    es  | (1,0) ; registrador[5]
+    es  | (1,1) ; registrador[4]
+    es  | (1,2) ; registrador[3]
+retorno_link2
 
--- Resultado todas as operações funcionando conforme o planejado.
-
-
-
+link3
+    es | registrador[7] ; 20.0
+    mul | registrador[7] ; registrador[7] ; 3.0
+    es | (6,0) ; registrador[7]
+retorno_link3
 
 
 
