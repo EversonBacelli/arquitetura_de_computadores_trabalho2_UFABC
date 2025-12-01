@@ -6,7 +6,8 @@ programas = [
                 'teste3_saltoCondicional.txt',
                 'teste4_laco_repeticao.txt',
                 'algoritmo_raiz.txt',
-                'algoritmo_logaritmo.txt'
+                'algoritmo_logaritmo.txt',
+                'algoritmo_cosseno.txt'
             ]
 
 

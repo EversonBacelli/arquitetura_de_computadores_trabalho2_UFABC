@@ -48,18 +48,33 @@ class Exec:
                 else:
                     ex.next = self.pc.exec_func[posicao + 1]
             elif ex.comando == 'cond':
-                ex.opc.definirPosicoesTags() 
-                ex.next = [self.pc.execucao[posicao + 1], self.pc.execucao[ex.opc.posicaoF]]
-                self.pc.execucao[ex.opc.posicaoV].next = self.pc.execucao[ex.opc.posicaoFim]
-                self.pc.execucao[ex.opc.posicaoF].next = self.pc.execucao[ex.opc.posicaoF + 1]
-                if ex.opc.posicaoFim + 1 < len(self.pc.execucao):
-                    self.pc.execucao[ex.opc.posicaoFim].next = self.pc.execucao[ex.opc.posicaoFim + 1]
+                ex.opc.definirPosicoesTags(escopo)
+                if escopo == 'main':
+                    ex.next = [self.pc.execucao[posicao + 1], self.pc.execucao[ex.opc.posicaoF]]
+                    self.pc.execucao[ex.opc.posicaoV].next = self.pc.execucao[ex.opc.posicaoFim]
+                    self.pc.execucao[ex.opc.posicaoF].next = self.pc.execucao[ex.opc.posicaoF + 1]
+                    if ex.opc.posicaoFim + 1 < len(self.pc.execucao):
+                        self.pc.execucao[ex.opc.posicaoFim].next = self.pc.execucao[ex.opc.posicaoFim + 1]
+                else:
+                    ex.next = [self.pc.exec_func[posicao + 1], self.pc.exec_func[ex.opc.posicaoF]]
+                    self.pc.exec_func[ex.opc.posicaoV].next = self.pc.exec_func[ex.opc.posicaoFim]
+                    self.pc.exec_func[ex.opc.posicaoF].next = self.pc.exec_func[ex.opc.posicaoF + 1]
+                    if ex.opc.posicaoFim + 1 < len(self.pc.exec_func):
+                        self.pc.exec_func[ex.opc.posicaoFim].next = self.pc.exec_func[ex.opc.posicaoFim + 1]
+                 
+
                
             elif ex.comando == 'rep':
-                ex.opc.definirPosicoesTags()
-                ex.next = [self.pc.execucao[ex.opc.posicaoVerdadeira], self.pc.execucao[ex.opc.posicaoFalsa]]
-                self.pc.execucao[ex.opc.posicaoVerdadeira].next = self.pc.execucao[ex.opc.posicaoVerdadeira + 1]
-                self.pc.execucao[posicao + 1].next = self.pc.execucao[posicao + 2]
+                ex.opc.definirPosicoesTags(escopo)
+                if escopo == 'main':
+                    ex.next = [self.pc.execucao[ex.opc.posicaoVerdadeira], self.pc.execucao[ex.opc.posicaoFalsa]]
+                    self.pc.execucao[ex.opc.posicaoVerdadeira].next = self.pc.execucao[ex.opc.posicaoVerdadeira + 1]
+                    self.pc.execucao[posicao + 1].next = self.pc.execucao[posicao + 2]
+                else:
+                    ex.next = [self.pc.exec_func[ex.opc.posicaoVerdadeira], self.pc.exec_func[ex.opc.posicaoFalsa]]
+                    self.pc.exec_func[ex.opc.posicaoVerdadeira].next = self.pc.exec_func[ex.opc.posicaoVerdadeira + 1]
+                    self.pc.exec_func[posicao + 1].next = self.pc.exec_func[posicao + 2]
+                
                
             elif ex.comando == 'jump':
                 ex.opc.definirPosicoesTags()

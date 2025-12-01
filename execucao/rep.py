@@ -16,8 +16,12 @@ class rep(IMPL_COMANDOS_INTERNOS):
         print('', end='')
         
     
-    def definirPosicoesTags(self):
-        ex = self.pc.execucao
+    def definirPosicoesTags(self, escopo):
+        ex = None
+        if escopo == 'main':
+            ex = self.pc.execucao
+        else:
+            ex = self.pc.exec_func
         
         
         for i in range(len(ex)):

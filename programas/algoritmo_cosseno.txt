@@ -1,0 +1,57 @@
+TITULO  :   "Calcular o Cosseno de um número" 
+
+EXEC
+-- Definições
+-- [ 0, 0 ] - valor a calcular o Cosseno
+-- [ 0, 1 ] - valor em radianos
+-- [ 1, 0 ] - Acumulador
+-- [ 1, 1 ] - potencia
+-- [ 1, 2 ] - fatoreal
+-- [ 2, 0 ] - numero de iterações
+-- [ 3, 0 ] - numero de PI
+-- [ 4, 0 ] - valor inicial da potencia
+-- INICIO
+es | (0,0) ; 30.0
+es | (1,0) ; 1.0
+es | (2,0) ; 5.0
+es | (3,0) ; 3.14159
+es | (4,0) ; 2.0
+-- calculo do valor em radianos
+jump | link_radianos ; retorno_link_radianos
+jump | link_potencia; retorno_link_potencia
+jump | link_cond ; retorno_link_cond
+--
+
+***
+link_radianos
+    es | registrador[0] ; (0,0)
+    div | registrador[0] ; registrador[0] ; 180.0
+    mul | registrador[0] ; registrador[0] ; (3,0)
+    es | (0,1) ; registrador[0]
+retorno_link_radianos
+
+link_potencia
+    -- controlador
+    es | registrador[0] ; 0.0
+    es | registrador[1] ; 1.0
+    es | registrador[2] ; 2.0
+    LOOP_POTENCIA
+        mul | registrador[1] ; registrador[1] ; registrador[2]
+        add | registrador[0] ; registrador[0] ; 1.0
+        meq | registrador[5] ;  registrador[0] ; 4.0
+    rep | registrador[5] ; LOOP_POTENCIA ; END_LOOP_POTENCIA
+    END_LOOP_POTENCIA
+    es | (1,1) ; registrador[1]
+retorno_link_potencia
+
+link_cond
+    es | registrador[0] ; 8.0
+    mq | registrador[5] ; registrador[0] ; 9.0
+
+    cond | registrador[5] ; DESVIO_1; FIM_1; ELSE_1
+            es | registrador[6] ; 8.0
+        DESVIO_1
+        ELSE_1
+            es | registrador[6] ; 12.0
+        FIM_1
+retorno_link_cond
