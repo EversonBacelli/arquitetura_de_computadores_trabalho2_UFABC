@@ -12,7 +12,7 @@ pc = PC()
 #        "[5] - Logaritmo "
 #        "[6] - Cosseno "      
 
-pc.exec(6)
+pc.exec(0)
 
 # for comando, operandos in comandos:
 #     print(comando, ' ', operandos)

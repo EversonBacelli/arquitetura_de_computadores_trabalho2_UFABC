@@ -10,7 +10,7 @@ class jump(IMPL_COMANDOS_INTERNOS):
         self.link = None
         self.retorno = None
         self.next = None
-        print(self.tag_link, '-----', self.tag_retorno)
+        # print(self.tag_link, '-----', self.tag_retorno)
     def processar(self):
         print('', end='')
         
@@ -30,7 +30,7 @@ class jump(IMPL_COMANDOS_INTERNOS):
             if ex_func[i].comando == self.tag_retorno:
                 self.retorno = i
         
-        print(self.link, ' --  ', self.retorno)
+        # print(self.link, ' --  ', self.retorno)
            
     
     

@@ -20,12 +20,16 @@ class cond(IMPL_COMANDOS_INTERNOS):
     
     def definirPosicoesTags(self, escopo):
         ex = None
+        valor = 0
+        # print('---------- ',escopo )
+        
         if escopo == 'main':
             ex = self.pc.execucao
         else:
             ex = self.pc.exec_func
 
-        for i in range(len(ex)):
+
+        for i in range(len(ex) - 1):
             if ex[i].comando == self.tag_verdade:
                 self.posicaoV = i
             elif ex[i].comando == self.tag_falsa:

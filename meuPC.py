@@ -40,11 +40,16 @@ class PC:
         
         # Converter comandos em operações executáveis       
         for i in range(len(alg)):
-            comando, operandos = alg[i]
-            e = Exec(comando, operandos, self, i)
+            if isinstance(alg[i], str):
+                e = Exec(alg[i], None, self, i)    
+            else:
+                comando, operandos = alg[i]
+                e = Exec(comando, operandos, self, i)
             self.execucao.append(e)
         # # Condição de parada do process
         self.execucao.append(None)
+        
+        
         
         for i in range(len(func)):
             if isinstance(func[i], str):
@@ -55,14 +60,24 @@ class PC:
                 comando, operandos = func[i]
                 e = Exec(comando, operandos, self, i)
                 self.exec_func.append(e)
-         
         
-        # Vincular Nós, 
+        
+        
+        # # Vincular Nós, 
         for i in range(len(self.execucao) -1 ):
             self.execucao[i].definirProximo(i, 'main')
         
+        # for e in self.execucao:
+        #     if e is not None:
+        #         if isinstance(e.next, list):
+        #             print(e.comando, '  ' , e.next[0].comando, ' ', e.next[1].comando )
+        #         else:
+        #             if e.next != None:
+        #                 print(e.comando, '  ', e.next.comando)
+        #             else:
+        #                 print(e.comando, '  ', e.next)
+
         for i in range(len(self.exec_func) -1 ):
-            # print(self.exec_func[i])
             self.exec_func[i].definirProximo(i, 'func')
         
         

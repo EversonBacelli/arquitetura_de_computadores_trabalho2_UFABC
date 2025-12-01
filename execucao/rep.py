@@ -11,7 +11,7 @@ class rep(IMPL_COMANDOS_INTERNOS):
         self.tag_falsa = tag_falsa
         self.posicaoVerdadeira = 0
         self.posicaoFalsa = 0
-       
+        print(self.tag_verdade, '  ' , self.tag_falsa)
     def processar(self):
         print('', end='')
         
@@ -24,7 +24,7 @@ class rep(IMPL_COMANDOS_INTERNOS):
             ex = self.pc.exec_func
         
         
-        for i in range(len(ex)):
+        for i in range(len(ex) - 1):
             if ex[i].comando == self.tag_verdade:
                 self.posicaoVerdadeira = i
             elif ex[i].comando == self.tag_falsa:

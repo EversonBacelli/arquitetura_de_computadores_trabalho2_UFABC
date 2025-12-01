@@ -65,6 +65,7 @@ class Exec:
 
                
             elif ex.comando == 'rep':
+                print('REP -----')
                 ex.opc.definirPosicoesTags(escopo)
                 if escopo == 'main':
                     ex.next = [self.pc.execucao[ex.opc.posicaoVerdadeira], self.pc.execucao[ex.opc.posicaoFalsa]]

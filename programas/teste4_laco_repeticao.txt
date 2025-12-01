@@ -1,25 +1,16 @@
 TITULO  :   "Laço de Repetição" 
 EXEC
+es | registrador[7] ; 75.0
+add | registrador[7] ; registrador[7] ; 5.0
 es | registrador[1] ; 2.0
 es | registrador[2] ; 5.0
 es | registrador[4] ; 1.0
-LOOP1
+LOOP1 
     mul | registrador[4] ; registrador[4] ; registrador[1]
     sub | registrador[2] ; registrador[2] ; 1.0
     meq | registrado[6] ;  0.0 ; registrador[2]
     rep | registrador[6] ; LOOP1 ; END_LOOP1
-END_LOOP1
+END_LOOP1 
 
 es | (6,5) ;  registrador[4]
 mul | registrador[2] ;  registrador[2] ; -1.0
-
--- Resultado Esperado nos registradores
-        --      registrador[1] = 2.0     |  base
-        --      registrador[2] = 5.0  | 4.0 | 3.0 | 2.0 | 1.0  | 0.0   -  N° de Interações
-        --      registrador[4] = 1.0  | 2.0 | 4.0 | 8.0 | 16.0 | 32.0  - Update
-        --      registrador[6] = 1.0  | 1.0 | 1.0 | 1.0 | 1.0  | 0.0
-
--- Resultado Esperado no MP
-        --  (6,5) = 32.0
-
--- Avaliação:  Funcionando conforme o planejado

@@ -18,7 +18,9 @@ def preProcessamento(ALGORITMO):
             for i in range(len(operandos)):
                 operandos[i] = operandos[i].strip()
             comandos.append((comando, operandos))
-    
+        else:
+            comandos.append((linha))
+            
     for linha in func:
         if linha.find('|') != -1:
             comando, operandos = linha.split('|', 1)
