@@ -43,8 +43,9 @@ retorno_link2
 
 link3
     es | registrador[7] ; 20.0
-    mul | registrador[7] ; registrador[7] ; 3.0
-    es | (6,0) ; registrador[7]
+    es | registrador[6] ; 2.0 
+    div | registrador[7] ; registrador[7] ; registrador[6]
+    es | (7,0) ; registrador[7]
 retorno_link3
 
 

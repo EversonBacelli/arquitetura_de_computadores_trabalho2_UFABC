@@ -1,7 +1,7 @@
 import numpy as np
 
 def carregarMemoriaPrincipal():
-    np.set_printoptions(precision=4, suppress=True)
+    np.set_printoptions(precision=8, suppress=True)
     mp = np.zeros((8, 8), dtype=float)
     return mp
 

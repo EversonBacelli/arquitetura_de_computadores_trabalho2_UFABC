@@ -18,20 +18,39 @@ es | (3,0) ; 3.14159
 es | (4,0) ; 0.0
 -- calculo do valor em radianos
 jump | link_radianos ; retorno_link_radianos
-es | registrador[7] ; (2,0)
+es | registrador[7] ; (1,0)
 es | registrador[6] ; -1.0
 es | registrador[5] ; 1.0
 -- radianos
 es | registrador[4] ; (0,1)
+es | (7,0) ; 1.0
 
 LOOP
-    -- jump | link_update_valor ; retorno_update_valor
-    es | registrador[0] ; 1.0
+    jump | link_update_valor ; retorno_update_valor
+    jump | link_potencia ; retorno_link_potencia
+    jump | link_fat ; retorno_link_fat
+
+    -- Realizar o calculo
+    es | registrador[1] ; (1,0)
+    es | registrador[2] ; (1,1)
+    es | registrador[3] ; (1,2)
+    
+    div | registrador[2] ; registrador[2] ; registrador[3]
+
+    mul | registrador[2] ; registrador[2] ; registrador[6]
+    add | registrador[1] ; registrador[1] ; registrador[2]
+
+    -- inverter o sinal
+    mul | registrador[6] ; registrador[6] ; -1.0
+    es | (1,0) ; registrador[1]
+
+    es | registrador[0] ; (7,0)
     add | registrador[0] ; registrador[0] ; 1.0
+    es | (7,0) ; registrador[0]
     meq | registrador[5] ; registrador[0] ; 5.0
 rep | registrador[5] ; LOOP ; END_LOOP
 END_LOOP
-
+es | registrador[7] ; (1,0)
 --
 
 ***

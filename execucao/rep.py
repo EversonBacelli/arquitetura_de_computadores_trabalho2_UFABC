@@ -11,7 +11,7 @@ class rep(IMPL_COMANDOS_INTERNOS):
         self.tag_falsa = tag_falsa
         self.posicaoVerdadeira = 0
         self.posicaoFalsa = 0
-        print(self.tag_verdade, '  ' , self.tag_falsa)
+        # print(self.tag_verdade, '  ' , self.tag_falsa)
     def processar(self):
         print('', end='')
         

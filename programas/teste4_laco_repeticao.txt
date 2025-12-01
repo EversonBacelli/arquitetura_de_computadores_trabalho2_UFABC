@@ -1,9 +1,7 @@
 TITULO  :   "Laço de Repetição" 
 EXEC
-es | registrador[7] ; 75.0
-add | registrador[7] ; registrador[7] ; 5.0
 es | registrador[1] ; 2.0
-es | registrador[2] ; 5.0
+es | registrador[2] ; 6.0
 es | registrador[4] ; 1.0
 LOOP1 
     mul | registrador[4] ; registrador[4] ; registrador[1]

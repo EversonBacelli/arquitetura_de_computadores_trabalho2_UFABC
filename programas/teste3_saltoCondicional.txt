@@ -1,6 +1,6 @@
 TITULO  :   "Salto Condicional e Incondicional" 
 EXEC
-es | registrador[1] ; 5 
+es | registrador[1] ; 1 
 es | registrador[2] ; 3
 mq | registrado[3] ; registrador[1] ; registrador[2]
 cond | registrador[3] ; DESVIO ; FIM ; ELSE

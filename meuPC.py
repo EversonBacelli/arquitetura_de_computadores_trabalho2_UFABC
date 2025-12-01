@@ -133,7 +133,7 @@ class PC:
 
     def escrever(self, valor, destino):
         novaString = destino[0:3]
-        
+        # print(valor)
         # Escrita em posição definida pelo usuário na MP
         if novaString == 'reg':
             numeroRegistrador = self.obterEnderecoRegistrador(destino)

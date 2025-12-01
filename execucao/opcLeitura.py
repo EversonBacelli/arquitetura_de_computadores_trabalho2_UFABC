@@ -7,4 +7,4 @@ class opcLeitura(IMPL_COMANDOS_INTERNOS):
         self.endereco = endereco
     def processar(self):
         valor = self.pc.ler(self.endereco)
-        return valor
+        return float(valor)
