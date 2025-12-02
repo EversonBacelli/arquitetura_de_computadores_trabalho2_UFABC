@@ -10,6 +10,8 @@ class jump(IMPL_COMANDOS_INTERNOS):
         self.link = None
         self.retorno = None
         self.next = None
+        self.link_true = []
+        self.link_false = []
         # print(self.tag_link, '-----', self.tag_retorno)
     def processar(self):
         print('', end='')

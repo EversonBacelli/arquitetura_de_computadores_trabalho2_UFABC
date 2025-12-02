@@ -83,12 +83,12 @@ class PC:
         
         
         # # print(len(self.execucao))
-        # for exe in self.execucao:
+        # for exe in self.exec_func:
         #     if exe is not None:
         #         if exe.comando == 'cond' or exe.comando == 'rep':
         #             print(exe.comando, '  ', exe.next[0].comando, '  ', exe.next[1].comando)
         #         elif exe.comando == 'jump':
-        #             print(exe.comando, '  ', exe.next.comando)
+        #             print(exe.comando, '  ', exe.next.comando, ' ', exe.opc.link_true)
         #         else:
         #             if exe.next is not None:
         #                 print(exe.comando, '  ', exe.next.comando)
@@ -101,11 +101,7 @@ class PC:
         ultimoComando = self.execucao[-1]
         
         while atual != ultimoComando :
-            # if atual != None:
-            #     print(atual.comando, ' ', atual.index)
-                # if atual.comando == 'add':
-                #     atual.processar()
-                # else: 
+ 
             atual.processar()
             if atual.comando == 'cond' or atual.comando == 'rep':
                 atual.opc.atualizarCondicao()
@@ -116,6 +112,7 @@ class PC:
                     atual = atual.next[1]
             else:
                 atual = atual.next
+                
             
         
         # print(PC.ALGORITMO[0][0])

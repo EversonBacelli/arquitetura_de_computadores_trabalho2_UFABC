@@ -1,210 +1,104 @@
 TITULO  :   "Calculo do Logaritmo" 
 
-
 EXEC
--- Base
-es | registrador[0] ; 2.0
-es | (1,6) ; registrador[0]
-es | registrador[1] ; 0.0
-es | registrador[2] ; 1.0
+-- [0, 0] - Logaritmando - alvo
+-- [0, 1] - base
+-- [0, 2] - n
+-- [0, 3] - h1
+-- [0, 4] - h2
+es | (2,0) ; 80.0
+es | (0,2) ; 100.0
+jump | link_calc_log ; retorno_calc_log
+es | (3,1) ; registrador[5]
+es | (2,0) ; 2.0
+jump | link ; retorno
+es | (3,2) ; registrador[5]
 
--- Logaritmando : Alvo 
-es | registrador[3] ; 80.0
-es | (1,7) ; registrador[3]
-es | registrador[4] ; 0
+-- Realizar o calculo
+es | registrador[4] ; (3,1)
 
--- Aproximar
-LOOP_INICIO
-    mul | registrador[2] ; registrador[2] ; registrador[0]
-    add | registrador[1] ; registrador[1] ; 1.0
-    meq | registrado[5] ;  registrador[2] ; registrador[3]
-    rep | registrador[5] ; LOOP_INICIO ; END_LOOP_INICIO
-END_LOOP_INICIO
+div | registrador[6] ; registrador[4] ; registrador[5]
+es | (3,0) ; registrador[6]
+***
 
-eq | registrador[5] ; registrador[2] ; registrador[3]
-cond | registrador[5] ; DESVIO_0 ; FIM_0 ; ELSE_0
-    -- Base
-    es | (6,0) ; registrador[0]
-    -- Expoente
-    es | (6,1) ; registrador[1]
-    -- Resultado
-    es | (6,2) ; registrador[2]
-DESVIO_0 
-ELSE_0 
-    sub | registrador[6] ; registrador[1] ; 1.0
-    div | registrador[2] ; registrador[2] ; registrador[0]
-    sub | registrador[4] ; registrador[3] ; registrador[2]
-    -- limite superior
-    es | (2,0) ; registrador[1]
-    -- limite inferior
-    es | (2,1) ; registrador[6]
-    es | registrador[5] ; 0.0
-    es | (5,1) ; registrador[5]
-    -- es | registrador[5] ; (5.1)
+link_calc_log
+    -- valor ln
+    es | registrador[0] ; (2,0)
+    -- n
+    es | registrador[1] ; (0,2)
 
+    -- (valor - 1) / n   ---  definindo a constante h
+    sub | registrador[2] ; registrador[0] ; 1.0
+    div | registrador[2] ; registrador[2] ; registrador[1]
+    -- ---------------------------------------------------
 
-       
-        -- VALORES DE ENTRADA
-        -- radicando
-        es | registrador[0] ; (1,7)
-        es | (7,0) ; registrador[0]
-            -- indice
-
-            es | registrador[1] ; registrador[5]
-            es | (7,1) ; registrador[1]
-            es | registrador[2] ; 0.0
-            -- Numero de Iterações
-            es | (7,2) ; 5.0
-
-
-            -- Buscar o valor mais próximo ou exato
-            LOOP1
-                -- Start da Iteração
-                add | registrador[2] ; registrador[2] ; 1.0
-                es | registrador[3] ; 0.0
-                es | registrador[4] ; 1.0
-                -- Calcular valor potencial
-                LOOP2
-                    -- Tentativa
-                    mul | registrador[4] ; registrador[4] ; registrador[2]
-                    --  Número de Iterações
-                    add | registrador[3] ; registrador[3] ; 1.0
-                    meq | registrado[5] ;  registrador[3] ; registrador[1]
-                    rep | registrador[5] ; LOOP2 ; END_LOOP2
-                END_LOOP2
-                meq | registrado[5] ; registrador[4] ; registrador[0]
-            rep | registrador[5] ; LOOP1 ; END_LOOP1
-            END_LOOP1
-
-
-            eq | registrador[5] ; registrador[4] ; registrador[0]
-            cond | registrador[5] ; DESVIO_1; FIM_1; ELSE_1
-                es | (0,0) ; registrador[4]
-                -- indice
-                es | (6,0) ; registrador[2]
-                -- expoente
-                es | (6,1) ; registrador[3]
-                ----------- Fim, caso o valor dê exato -------
-            DESVIO_1
-            ELSE_1
-                -- controlador de iteração
-                es | (5,5) ; 0.0
-
-                -- resultante
-                es | (0,0) ; registrador[4]
-                -- base
-                es | (3,0) ; registrador[2]
-                ---------------------- 
-                -- expoente anterior
-                sub | registrador[5] ; registrador[2] ; 1.0
-                es | (3,1) ; registrador[5]
-
-                -- INICIO LOOP ALGORITMO DE APROXIMAÇÃO
-                    -- Calculo da Bisseção
-                    -- quardado na linha 2
-                    es | registrador[7] ; (5,5)
-                    
-                    add | registrador[6] ; registrador[2] ; registrador[5]
-                    div | registrador[6] ; registrador[6] ; 2.0
-                    es  | (4,0) ; registrador[6]
-                    
-                        
-                    -- Newton Raphson: 1/n * [(n-1)*chute + (a / chute^(n-1))] 
-                        -- n = indice
-                        -- chute = valor a testar
-                        -- a = radicando (alvo)
-                    
-                    LOOP4    
-                        -- 1° Termo   1 / n,  de modo que n é o indice da raiz
-                        div | registrador[4] ; 1 ; registrador[1]
-                            -- guardado 
-                            es  | (4,1) ; registrador[4]
-
-                        -- 2° Termo:  n - 1 * chute
-                            -- n - 1: registrador[1] - 1
-                            -- chute: registrador[6]
-                        
-                        -- n - 1 =  registrador[7]
-                        -- chute = registrador[6]
-                        es | registrador[6] ; (4,0)
-                        sub | registrador[7] ; registrador[1] ; 1.0 
-                        mul | registrador[4] ; registrador[7] ; registrador[6]
-                            -- guardado
-                            es  | (4,2) ; registrador[4]
-
-                        -- 3° Termo:
-                                --  a  / chute ^ n - 1  
-                                    --  a   - registrador[0]
-                                    --  chute - registrador[6]
-
-                        -- construindo (chute ^ n - 1) 
-                        es | registrador[3] ; 1.0
-                        es | registrador[5] ; registrador[7]
-                        
-                        LOOP3
-                            mul | registrador[3] ; registrador[3] ; registrador[6]
-                            --  Número de Iterações
-                            sub | registrador[5] ; registrador[5] ; 1.0
-                            meq | registrado[2] ;  0.0 ; registrador[5]
-                        rep | registrador[2] ; LOOP3 ; END_LOOP3
-                        END_LOOP3
-                        es | registrador[7] ; registrador[3]
-                        div | registrador[4] ; registrador[0] ; registrador[3] 
-                        es | (4,3) ; registrador[4]
-                        
-                        -- RESUMINDO
-                            -- 1° Termo: (4,1)  |   3    
-                            -- 2° Termo: (4,2)  |   4    
-                            -- 3° Termo: (4,3)  |   5
-                        -- Recuperando os termos
-                        es | registrador[3] ; (4,1)
-                        es | registrador[4] ; (4,2)
-                        es | registrador[5] ; (4,3)
-
-                        -- Realizando o calculo
-                        add | registrador[4] ; registrador[4] ; registrador[5]
-                        mul | registrador[3] ; registrador[3] ; registrador[4]
-                        -- ------
-                        es | (4,0) ; registrador[3] 
-
-                        -- Controlador do laço
-                        es | registrador[6] ; (5,5)
-                        add | registrador[6] ; registrador[6] ; 1.0
-                        es | (5,5) ; registrador[6]
-                        es | registrador[7] ; (7,2)
-                        meq | registrador[7] ; registrador[6] ; registrador[7] 
-                        
-                    rep | registrador[7] ; LOOP4; END_LOOP4
-                    END_LOOP4
-
-
-
-                    -- Depois das Iterações
-                    -- Elevar a base obtida
-                        es | registrador[7] ; 1.0
-                        es | registrador[4] ; registrador[1]
-                    LOOP5
-                        sub | registrador[4] ; registrador[4] ; 1.0
-                        mul | registrador[7] ; registrador[7] ; registrador[3]
-                        --  Número de Iterações
-                        meq | registrado[2] ;  0.0 ; registrador[4]
-                    rep | registrador[2] ; LOOP5 ; END_LOOP5
-                    END_LOOP5
-                
-                    es | (6,0) ; registrador[3]
-                    es | (6,1) ; registrador[7]
-            FIM_1
-
+    -- LOOP INTERNO
+    es | registrador[3] ; 0.0
+    es | registrador[4] ; 0.0
+    es | registrador[6] ; 0.0
+    -- parenteses - saida registrador[6]
+    LOOP_CALC
+        -- ok
+        add | registrador[3] ; registrador[3] ; 1.0
         
+        -- ok
+        mul | registrador[4] ; registrador[2] ; registrador[3]
+        add | registrador[4] ; 1.0 ; registrador[4]
+        div | registrador[4] ; 1.0 ; registrador[4]
+        add | registrador[6] ; registrador[6] ; registrador[4]
         
+        sub | registrador[5] ; registrador[1] ; 1.0
+        meq | registrador[7] ; registrador[3] ; registrador[5]
+    rep | registrador[7] ; LOOP_CALC; END_LOOP_CALC
+    END_LOOP_CALC
+    
+    -- resolvendo o colchetes
+    mul | registrador[7] ; 2.0 ; registrador[6]
+    add | registrador[7] ; registrador[7] ; 1.0
+    div | registrador[3] ; 1.0 ; registrador[0]
+    add | registrador[5] ; registrador[7] ; registrador[3]
+    -- fora do colchetes
+    div | registrador[6] ; registrador[2] ; 2.0
+    mul | registrador[5] ; registrador[6] ; registrador[5]
+retorno_calc_log
 
+link
+    -- valor ln
+    es | registrador[0] ; (2,0)
+    -- n
+    es | registrador[1] ; (0,2)
 
+    -- (valor - 1) / n   ---  definindo a constante h
+    sub | registrador[2] ; registrador[0] ; 1.0
+    div | registrador[2] ; registrador[2] ; registrador[1]
+    -- ---------------------------------------------------
+
+    -- LOOP INTERNO
+    es | registrador[3] ; 0.0
+    es | registrador[4] ; 0.0
+    es | registrador[6] ; 0.0
+    -- parenteses - saida registrador[6]
+    LOOP_CALC2
+        -- ok
+        add | registrador[3] ; registrador[3] ; 1.0
         
-
-        -- ########################
+        -- ok
+        mul | registrador[4] ; registrador[2] ; registrador[3]
+        add | registrador[4] ; 1.0 ; registrador[4]
+        div | registrador[4] ; 1.0 ; registrador[4]
+        add | registrador[6] ; registrador[6] ; registrador[4]
         
-FIM_0
-
-
-
-
+        sub | registrador[5] ; registrador[1] ; 1.0
+        meq | registrador[7] ; registrador[3] ; registrador[5]
+    rep | registrador[7] ; LOOP_CALC2; END_LOOP_CALC2
+    END_LOOP_CALC2
+    
+    -- resolvendo o colchetes
+    mul | registrador[7] ; 2.0 ; registrador[6]
+    add | registrador[7] ; registrador[7] ; 1.0
+    div | registrador[3] ; 1.0 ; registrador[0]
+    add | registrador[5] ; registrador[7] ; registrador[3]
+    -- fora do colchetes
+    div | registrador[6] ; registrador[2] ; 2.0
+    mul | registrador[5] ; registrador[6] ; registrador[5]
+retorno

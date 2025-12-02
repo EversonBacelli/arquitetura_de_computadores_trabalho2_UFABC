@@ -1,0 +1,98 @@
+TITULO  :   "Calcular o Cosseno de um número" 
+
+EXEC
+-- Definições
+-- [ 0, 0 ] - valor a calcular o Cosseno
+-- [ 0, 1 ] - valor em radianos
+-- [ 1, 0 ] - Acumulador
+-- [ 1, 1 ] - potencia
+-- [ 1, 2 ] - fatoreal
+-- [ 2, 0 ] - numero de iterações
+-- [ 3, 0 ] - numero de PI
+-- [ 4, 0 ] - valor inicial da potencia
+-- INICIO
+es | (0,0) ; 30.0
+
+es | (2,0) ; 4.0
+es | (3,0) ; 3.14159
+es | (4,0) ; 1.0
+-- calculo do valor em radianos
+jump | link_radianos ; retorno_link_radianos
+es | (1,0) ; registrador[0]
+es | registrador[7] ; (1,0)
+es | registrador[6] ; -1.0
+es | registrador[5] ; 1.0
+-- radianos
+es | registrador[4] ; (0,1)
+es | (7,0) ; 1.0
+
+LOOP
+    jump | link_update_valor ; retorno_update_valor
+    jump | link_potencia ; retorno_link_potencia
+    jump | link_fat ; retorno_link_fat
+
+    -- Realizar o calculo
+    es | registrador[1] ; (1,0)
+    es | registrador[2] ; (1,1)
+    es | registrador[3] ; (1,2)
+    
+    div | registrador[2] ; registrador[2] ; registrador[3]
+
+    mul | registrador[2] ; registrador[2] ; registrador[6]
+    add | registrador[1] ; registrador[1] ; registrador[2]
+
+    -- inverter o sinal
+    mul | registrador[6] ; registrador[6] ; -1.0
+    es | (1,0) ; registrador[1]
+
+    es | registrador[0] ; (7,0)
+    add | registrador[0] ; registrador[0] ; 1.0
+    es | (7,0) ; registrador[0]
+    meq | registrador[5] ; registrador[0] ; 5.0
+rep | registrador[5] ; LOOP ; END_LOOP
+END_LOOP
+es | registrador[7] ; (1,0)
+--
+
+***
+link_radianos
+    es | registrador[0] ; (0,0)
+    div | registrador[0] ; registrador[0] ; 180.0
+    mul | registrador[0] ; registrador[0] ; (3,0)
+    es | (0,1) ; registrador[0]
+retorno_link_radianos
+
+link_update_valor
+    es | registrador[2] ; (4,0)
+    add | registrador[1] ; registrador[2] ; 3.0
+    es | (4,0) ; registrador[1]
+retorno_update_valor
+
+link_potencia
+    -- controlador
+    es | registrador[0] ; 0.0
+    es | registrador[1] ; 1.0
+    -- valor da potencia progressivamente atualizada
+    es | registrador[2] ; (4,0)
+    LOOP_POTENCIA
+        -- registrador[4] == valor de cos x em radianos
+        mul | registrador[1] ; registrador[1] ; registrador[4]
+        add | registrador[0] ; registrador[0] ; 1.0
+        meq | registrador[3] ; registrador[0] ; registrador[2]
+    rep | registrador[3] ; LOOP_POTENCIA ; END_LOOP_POTENCIA
+    END_LOOP_POTENCIA
+    es | (1,1) ; registrador[1]
+retorno_link_potencia
+
+link_fat
+    es | registrador[0] ; (4,0)
+    es | registrador[1] ; 1.0
+
+    LOOP_FAT
+        mul | registrador[1] ; registrador[1] ; registrador[0]
+        sub | registrador[0] ; registrador[0] ; 1.0
+        mq | registrador[3] ; registrador[0] ; 1.0
+    rep | registrador[3] ; LOOP_FAT ; END_LOOP_FAT
+    END_LOOP_FAT
+    es | (1,2) ; registrador[1]
+retorno_link_fat

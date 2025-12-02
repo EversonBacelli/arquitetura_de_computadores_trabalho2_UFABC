@@ -10,9 +10,11 @@ pc = PC()
 #        "[3] - Teste de Laço de Repetição"
 #        "[4] - Raiz"
 #        "[5] - Logaritmo "
-#        "[6] - Cosseno "      
+#        "[6] - Cosseno "
+#        "[7] - Seno"    
+    
 
-pc.exec(6)
+pc.exec(5)
 
 # for comando, operandos in comandos:
 #     print(comando, ' ', operandos)
