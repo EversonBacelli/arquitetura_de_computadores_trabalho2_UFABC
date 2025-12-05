@@ -372,6 +372,24 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "tracemalloc",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tracemalloc",
+        "description": "tracemalloc",
+        "detail": "tracemalloc",
+        "documentation": {}
+    },
+    {
         "label": "re,",
         "kind": 6,
         "isExtraImport": true,
@@ -499,7 +517,7 @@
         "kind": 6,
         "importPath": "execucao.jump",
         "description": "execucao.jump",
-        "peekOfCode": "class jump(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, tag_link=None, tag_retorno=None):\n        self.pc = pc\n        self.comando = comando\n        self.tag_link= tag_link\n        self.tag_retorno = tag_retorno\n        self.link = None\n        self.retorno = None\n        self.next = None\n        print(self.tag_link, '-----', self.tag_retorno)",
+        "peekOfCode": "class jump(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, comando, tag_link=None, tag_retorno=None):\n        self.pc = pc\n        self.comando = comando\n        self.tag_link= tag_link\n        self.tag_retorno = tag_retorno\n        self.link = None\n        self.retorno = None\n        self.next = None\n        self.link_true = []",
         "detail": "execucao.jump",
         "documentation": {}
     },
@@ -535,7 +553,7 @@
         "kind": 6,
         "importPath": "execucao.opcLeitura",
         "description": "execucao.opcLeitura",
-        "peekOfCode": "class opcLeitura(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, endereco):\n        self.pc = pc\n        self.endereco = endereco\n    def processar(self):\n        valor = self.pc.ler(self.endereco)\n        return valor",
+        "peekOfCode": "class opcLeitura(IMPL_COMANDOS_INTERNOS):\n    def __init__(self, pc, endereco):\n        self.pc = pc\n        self.endereco = endereco\n    def processar(self):\n        valor = self.pc.ler(self.endereco)\n        return float(valor)",
         "detail": "execucao.opcLeitura",
         "documentation": {}
     },
@@ -598,7 +616,7 @@
         "kind": 2,
         "importPath": "memoriaPrincipal.mp",
         "description": "memoriaPrincipal.mp",
-        "peekOfCode": "def carregarMemoriaPrincipal():\n    np.set_printoptions(precision=4, suppress=True)\n    mp = np.zeros((8, 8), dtype=float)\n    return mp\ndef selecionarPosicaoMP(mp):\n    for i in range(len(mp)):\n        for j in range(len(mp[0])):\n            if np.isnan(mp[i][j]):\n                return i, j\n    # 2. Obtenha as dimensões (shape)",
+        "peekOfCode": "def carregarMemoriaPrincipal():\n    np.set_printoptions(precision=8, suppress=True)\n    mp = np.zeros((8, 8), dtype=float)\n    return mp\ndef selecionarPosicaoMP(mp):\n    for i in range(len(mp)):\n        for j in range(len(mp[0])):\n            if np.isnan(mp[i][j]):\n                return i, j\n    # 2. Obtenha as dimensões (shape)",
         "detail": "memoriaPrincipal.mp",
         "documentation": {}
     },
@@ -724,7 +742,7 @@
         "kind": 5,
         "importPath": "programas.carregarProgramas",
         "description": "programas.carregarProgramas",
-        "peekOfCode": "programas = [\n                'teste1_leitura_escrita_aritmetica.txt', \n                'teste2_operacoesLogicas.txt',\n                'teste3_saltoCondicional.txt',\n                'teste4_laco_repeticao.txt',\n                'algoritmo_raiz.txt',\n                'algoritmo_logaritmo.txt'\n            ]\ndef carregarPrograma():\n    ALGORITMOS = []",
+        "peekOfCode": "programas = [\n                'teste1_leitura_escrita_aritmetica.txt', \n                'teste2_operacoesLogicas.txt',\n                'teste3_saltoCondicional.txt',\n                'teste4_laco_repeticao.txt',\n                'algoritmo_raiz.txt',\n                'algoritmo_logaritmo.txt',\n                'algoritmo_cosseno.txt', \n                'algoritmo_seno.txt'\n            ]",
         "detail": "programas.carregarProgramas",
         "documentation": {}
     },
@@ -760,8 +778,17 @@
         "kind": 2,
         "importPath": "registradores.rg",
         "description": "registradores.rg",
-        "peekOfCode": "def carregarRegistradores():\n    np.set_printoptions(precision=4, suppress=True)\n    registradores = np.zeros((8), dtype=float)\n    return registradores",
+        "peekOfCode": "def carregarRegistradores():\n    np.set_printoptions(precision=8, suppress=True)\n    registradores = np.zeros((8), dtype=float)\n    return registradores",
         "detail": "registradores.rg",
+        "documentation": {}
+    },
+    {
+        "label": "start_time",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "start_time = time.perf_counter()\ntracemalloc.start()\npc = PC()\npc.exec(5)\nsnapshot = tracemalloc.take_snapshot()\nmemoria_atual, pico_memoria = tracemalloc.get_traced_memory()\nend_time = time.perf_counter()\ntempo_decorrido = end_time - start_time\nprint(f\"Tempo de execução: {tempo_decorrido:.4f} segundos\")\nprint(f\"Uso de memória atual: {memoria_atual / 1048576:.2f} MB\")",
+        "detail": "index",
         "documentation": {}
     },
     {
@@ -769,7 +796,34 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "pc = PC()\n##\n#        \"[0] - Teste Leitura, Escrita e Operações Aritméticas \"\n#        \"[1] - Teste Operações Lógicas\"\n#        \"[2] - Teste de Salto Condicional\"\n#        \"[3] - Teste de Laço de Repetição\"\n#        \"[4] - Raiz\"\n#        \"[5] - Logaritmo \"\npc.exec(0)\n# for comando, operandos in comandos:",
+        "peekOfCode": "pc = PC()\npc.exec(5)\nsnapshot = tracemalloc.take_snapshot()\nmemoria_atual, pico_memoria = tracemalloc.get_traced_memory()\nend_time = time.perf_counter()\ntempo_decorrido = end_time - start_time\nprint(f\"Tempo de execução: {tempo_decorrido:.4f} segundos\")\nprint(f\"Uso de memória atual: {memoria_atual / 1048576:.2f} MB\")\nprint(f\"Pico de uso de memória: {pico_memoria / 1048576:.2f} MB\")\ntracemalloc.stop()",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "snapshot",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "snapshot = tracemalloc.take_snapshot()\nmemoria_atual, pico_memoria = tracemalloc.get_traced_memory()\nend_time = time.perf_counter()\ntempo_decorrido = end_time - start_time\nprint(f\"Tempo de execução: {tempo_decorrido:.4f} segundos\")\nprint(f\"Uso de memória atual: {memoria_atual / 1048576:.2f} MB\")\nprint(f\"Pico de uso de memória: {pico_memoria / 1048576:.2f} MB\")\ntracemalloc.stop()",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "end_time",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "end_time = time.perf_counter()\ntempo_decorrido = end_time - start_time\nprint(f\"Tempo de execução: {tempo_decorrido:.4f} segundos\")\nprint(f\"Uso de memória atual: {memoria_atual / 1048576:.2f} MB\")\nprint(f\"Pico de uso de memória: {pico_memoria / 1048576:.2f} MB\")\ntracemalloc.stop()",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "tempo_decorrido",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "tempo_decorrido = end_time - start_time\nprint(f\"Tempo de execução: {tempo_decorrido:.4f} segundos\")\nprint(f\"Uso de memória atual: {memoria_atual / 1048576:.2f} MB\")\nprint(f\"Pico de uso de memória: {pico_memoria / 1048576:.2f} MB\")\ntracemalloc.stop()",
         "detail": "index",
         "documentation": {}
     },
